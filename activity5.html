@@ -120,6 +120,21 @@
       -webkit-text-fill-color:transparent;
       background-clip:text;
       letter-spacing:-3px;
+  filter: drop-shadow(0 5px 15px rgba(0,0,0,0.9)) 
+          drop-shadow(0 0 30px rgba(255,20,147,0.4));
+  
+  /* Subtle animation to keep it alive */
+  animation: textGlow 3s ease-in-out infinite alternate;
+}
+  @keyframes textGlow {
+  from {
+    filter: drop-shadow(0 5px 10px rgba(0,0,0,0.8)) 
+            drop-shadow(0 0 20px rgba(255,20,147,0.3));
+  }
+  to {
+    filter: drop-shadow(0 5px 15px rgba(0,0,0,1)) 
+            drop-shadow(0 0 40px rgba(255,20,147,0.6));
+  }
     }
     
     p{
@@ -158,12 +173,14 @@
       box-shadow:0 20px 60px rgba(255,20,147,.6);
     }
     
-    .secondary{
-      background:rgba(255,255,255,.15);
-      color:var(--hotpink);
-      border:2px solid var(--hotpink);
-      box-shadow:0 15px 45px rgba(255,105,180,.4);
-    }
+    .secondary {
+    background: rgba(255, 255, 255, 0.1);
+    color: #ffffff;
+    border: 3px solid var(--hotpink);
+    box-shadow: 0 0 20px rgba(255, 0, 127, 0.4);
+    backdrop-filter: blur(10px);
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+  }
     
     .primary:hover{
       transform:translateY(-12px) scale(1.05);
