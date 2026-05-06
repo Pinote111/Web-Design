@@ -1,168 +1,202 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<meta charset="UTF-8">
-<title>LOGIN PAGE</title>
-<link rel="icon" type="image/gif" href="https://i.pinimg.com/originals/bc/11/80/bc11809c97271e15b7495b7ccd880ab7.gif">
-<style>
-*{margin:0;box-sizing:border-box;font-family:'Poppins',Arial,sans-serif}
-:root{--pink:#ff1493;--hotpink:#ff69b4}
-
-.login{
-  height:100vh;
-  display:flex;
-  justify-content:center;
-  align-items:center;
-  position:relative;
-  background:url("https://i.pinimg.com/736x/74/82/b1/7482b16e16552df4f70b331cb7915a6a.jpg") center/cover no-repeat fixed;
-}
-
-.login::before{
-  content:"";
-  position:absolute;
-  inset:0;
-  background:linear-gradient(135deg,rgba(26,10,30,.7) 0%,rgba(42,26,58,.6) 50%,rgba(255,20,147,.3) 100%);
-  backdrop-filter:blur(1px);
-}
-
-.card{
-  position:relative;
-  z-index:1;
-  width:340px;
-  padding:45px 35px;
-  text-align:center;
-  color:#fff;
-  background:rgba(255,255,255,.12);
-  backdrop-filter:blur(25px);
-  border:2px solid rgba(255,105,180,.4);
-  border-radius:25px;
-  box-shadow:0 35px 90px rgba(0,0,0,.6),inset 0 1px 0 rgba(255,255,255,.2);
-  transition:all .4s cubic-bezier(.68,-.55,.265,1.55);
-}
-
-.card:hover{
-  transform:translateY(-12px) scale(1.03);
-  box-shadow:0 50px 120px rgba(255,20,147,.7),inset 0 1px 0 rgba(255,255,255,.3);
-  border-color:var(--hotpink);
-}
-
-h2{
-  font:900 28px/1.2 'Poppins',serif;
-  margin-bottom:30px;
-  background:linear-gradient(135deg,var(--pink),var(--hotpink));
-  -webkit-background-clip:text;
-  -webkit-text-fill-color:transparent;
-  background-clip:text;
-  text-shadow:0 0 30px var(--pink);
-  letter-spacing:-.5px;
-}
-
-input{
-  width:100%;
-  padding:18px 20px;
-  margin:15px 0;
-  border:2px solid rgba(255,105,180,.5);
-  border-radius:15px;
-  outline:none;
-  background:rgba(255,255,255,.1);
-  backdrop-filter:blur(15px);
-  color:#fff;
-  font-size:16px;
-  font-weight:400;
-  transition:all .4s ease;
-}
-
-input::placeholder{
-  color:rgba(255,255,255,.6);
-}
-
-input:focus{
-  border-color:var(--hotpink);
-  box-shadow:0 0 0 4px rgba(255,105,180,.2);
-  background:rgba(255,255,255,.15);
-  transform:translateY(-3px);
-}
-    .forgot-pass{
-      text-align:center;
-      margin-top:25px;
+  <meta charset="UTF-8">
+  <title>LOGIN PAGE</title>
+  <link rel="icon" type="image/gif" href="https://i.pinimg.com/originals/bc/11/80/bc11809c97271e15b7495b7ccd880ab7.gif">
+  <style>
+    /* 1. CONFIGURATION & THEME */
+    :root {
+      --pink: #ff1493;
+      --hotpink: #ff69b4;
+      --darkpink: #8b0a50;
     }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Poppins', sans-serif; }
     
-    .forgot-pass a{
-      color:#8b0a50;
-      text-decoration:none;
-      font-size:14px;
-      font-weight:500;
-      transition:all .3s ease;
+    body {
+      height: 100vh;
+      background: #050505;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      color: #fff;
+      overflow: hidden;
     }
-    
-    .forgot-pass a:hover{
-      text-shadow:0 0 15px var(--hotpink);
-      color:#fff;
+
+    /* 2. BACKGROUND & BLUR */
+    .bg {
+      position: absolute;
+      inset: 0;
+      background: url('https://i.pinimg.com/originals/a9/89/ce/a989ced391db5317f5c1dba895f4f92f.gif') center/cover;
+      opacity: 0.15;
+      z-index: -1;
+      filter: grayscale(30%);
     }
-button{
-  width:100%;
-  padding:20px;
-  margin:20px 0 10px;
-  border:2px solid var(--pink);
-  border-radius:15px;
-  outline:none;
-  background:linear-gradient(135deg,var(--pink),var(--hotpink));
-  color:#fff;
-  font:700 18px 'Poppins',serif;
-  font-weight:900;
-  cursor:pointer;
-  transition:all .5s cubic-bezier(.68,-.55,.265,1.55);
-  text-transform:uppercase;
-  letter-spacing:1px;
-  box-shadow:0 15px 45px rgba(255,20,147,.5);
-  position:relative;
-  overflow:hidden;
-}
 
-button:hover{
-  transform:translateY(-8px) scale(1.02);
-  box-shadow:0 25px 70px rgba(255,20,147,.8);
-  background:linear-gradient(135deg,var(--hotpink),var(--pink));
-}
+    .content { transition: transform 0.8s ease, filter 0.8s ease; }
+    .content.blur { filter: blur(15px); transform: scale(0.9); pointer-events: none; }
 
-button:active{
-  transform:translateY(-3px);
-}
+    /* 3. HERO SECTION */
+    h1 { 
+      font-size: 5rem; 
+      letter-spacing: 15px; 
+      text-shadow: 0 0 20px var(--darkpink); 
+      margin: 10px 0;
+      font-weight: 900;
+    }
 
-@keyframes slide{
-  0%{transform:translateX(-100%) translateX(-50%)}
-  100%{transform:translateX(100%) translateX(-50%)}
-}
+    .start-btn {
+      margin-top: 30px;
+      padding: 15px 45px;
+      border: 2px solid var(--darkpink);
+      background: rgba(139, 10, 80, 0.1);
+      color: #fff;
+      border-radius: 50px;
+      font-weight: bold;
+      letter-spacing: 2px;
+      transition: 0.4s;
+      cursor: pointer;
+    }
 
-@keyframes float{
-  0%,100%{transform:translateY(0)}
-  50%{transform:translateY(-15px)}
-}
+    .start-btn:hover { 
+      background: var(--darkpink); 
+      box-shadow: 0 0 40px var(--darkpink);
+      transform: translateY(-3px);
+    }
 
-@media(max-width:480px){
-  .card{width:90%;padding:35px 25px}
-  h2{font-size:24px}
-  input{padding:16px 18px;font-size:15px}
-  button{padding:18px;font-size:16px}
-}
-</style>
+    /* 4. DARLING STYLE MODAL */
+    .login-overlay {
+      position: fixed;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.85);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      opacity: 0;
+      visibility: hidden;
+      transition: 0.5s;
+      z-index: 10;
+    }
+
+    .login-overlay.active { opacity: 1; visibility: visible; }
+
+    .login-card {
+      position: relative;
+      width: 360px;
+      padding: 45px 35px;
+      background: rgba(255, 255, 255, .08);
+      backdrop-filter: blur(25px);
+      border: 2px solid rgba(255, 105, 180, .4);
+      border-radius: 25px;
+      box-shadow: 0 35px 90px rgba(0,0,0,0.6), inset 0 1px 0 rgba(255,255,255,0.1);
+      transition: all .4s cubic-bezier(.68,-.55,.265,1.55);
+    }
+
+    .login-card h2 { 
+      font-weight: 900;
+      font-size: 28px;
+      margin-bottom: 25px; 
+      background: linear-gradient(135deg, var(--pink), var(--hotpink));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      letter-spacing: 2px;
+    }
+
+    input {
+      width: 100%;
+      padding: 16px 20px;
+      margin: 10px 0;
+      background: rgba(255, 255, 255, .05);
+      border: 2px solid rgba(255, 105, 180, .3);
+      border-radius: 15px;
+      color: #fff;
+      outline: none;
+      transition: all 0.4s ease;
+    }
+
+    input:focus { 
+      border-color: var(--hotpink); 
+      background: rgba(255, 255, 255, .1); 
+      box-shadow: 0 0 15px rgba(255, 20, 147, 0.3);
+      transform: translateY(-2px);
+    }
+
+    .forgot-pass {
+      display: block;
+      margin-top: 5px;
+      color: var(--darkpink);
+      font-size: 13px;
+      text-decoration: none;
+      text-align: right;
+      transition: 0.3s;
+    }
+    .forgot-pass:hover { color: #fff; text-shadow: 0 0 10px var(--hotpink); }
+
+    .login-submit {
+      width: 100%;
+      padding: 18px;
+      margin-top: 25px;
+      background: linear-gradient(135deg, var(--pink), var(--hotpink));
+      border: none;
+      color: white;
+      border-radius: 15px;
+      font-weight: 900;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      cursor: pointer;
+      box-shadow: 0 15px 45px rgba(255, 20, 147, 0.4);
+      transition: 0.5s cubic-bezier(.68,-.55,.265,1.55);
+    }
+
+    .login-submit:hover { 
+      transform: translateY(-5px);
+      box-shadow: 0 20px 60px rgba(255, 20, 147, 0.6);
+    }
+
+    .cancel-txt {
+      margin-top: 20px;
+      font-size: 11px;
+      opacity: 0.5;
+      letter-spacing: 2px;
+      cursor: pointer;
+    }
+    .cancel-txt:hover { opacity: 1; color: var(--hotpink); }
+
+  </style>
 </head>
-
 <body>
 
-  <section class="login">
-    <div class="card">
-      <h2>Darling,<br>
-      Welcome back! </h2>
-      <form action="activity5.html">
-        <input type="email" placeholder="Enter your darling name.." required>
-        <input type="password" placeholder="Enter your secret..." required>
-        <button type="submit" class="login-btn">Login</button>
+  <div class="bg"></div>
+
+  <div class="content" id="main-content">
+    <p style="color: var(--hotpink); letter-spacing: 5px; font-weight: 300;">WEB DESIGN FINALS</p>
+    <h1>JOURNEY</h1>
+    <button class="start-btn" onclick="toggleLogin()">ENTER PORTFOLIO</button>
+  </div>
+
+  <div class="login-overlay" id="login-modal">
+    <div class="login-card">
+      <h2>IDENTIFY</h2>
+      <form action="activity6.html"> <input type="text" placeholder="Darling name.." required>
+        <input type="password" placeholder="Secret code.." required>
+        <a href="#" class="forgot-pass">Forgot Password?</a>
+        <button type="submit" class="login-submit">Login</button>
       </form>
-        <div class="forgot-pass">
-      <a href="#forgot">Forgot Password?</a>
+      <p class="cancel-txt" onclick="toggleLogin()">[ BACK ]</p>
     </div>
-  </section>
+  </div>
+
+  <script>
+    // Logic to toggle modal visibility and background blur
+    function toggleLogin() {
+      const modal = document.getElementById('login-modal');
+      const content = document.getElementById('main-content');
+      modal.classList.toggle('active');
+      content.classList.toggle('blur');
+    }
+  </script>
 
 </body>
 </html>
