@@ -187,16 +187,26 @@
       <p class="cancel-txt" onclick="toggleLogin()">[ BACK ]</p>
     </div>
   </div>
+  <form onsubmit="goToHero(event)">
+  <input type="text" placeholder="Darling name.." required>
+  <input type="password" placeholder="Secret code.." required>
+  <a href="#" class="forgot-pass">Forgot Password?</a>
+  <button type="submit" class="login-submit">Login</button>
+</form>
 
   <script>
-    // Logic to toggle modal visibility and background blur
-    function toggleLogin() {
-      const modal = document.getElementById('login-modal');
-      const content = document.getElementById('main-content');
-      modal.classList.toggle('active');
-      content.classList.toggle('blur');
-    }
-  </script>
+function toggleLogin() {
+  const modal = document.getElementById('login-modal');
+  const content = document.getElementById('main-content');
+  modal.classList.toggle('active');
+  content.classList.toggle('blur');
+}
+
+function goToHero(event) {
+  event.preventDefault();
+  window.location.href = "activity5.html";
+}
+</script>
 
 </body>
 </html>
