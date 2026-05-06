@@ -3,17 +3,23 @@
 <head>
   <meta charset="UTF-8">
   <title>DESIGN PORTFOLIO</title>
+
   <link rel="icon" type="image/gif" href="https://i.pinimg.com/originals/bc/11/80/bc11809c97271e15b7495b7ccd880ab7.gif">
+
   <style>
-    /* 1. CONFIGURATION & THEME */
     :root {
       --pink: #ff1493;
       --hotpink: #ff69b4;
       --darkpink: #8b0a50;
     }
 
-    * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Poppins', sans-serif; }
-    
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+    }
+
     body {
       height: 100vh;
       background: #050505;
@@ -25,7 +31,6 @@
       overflow: hidden;
     }
 
-    /* 2. BACKGROUND & BLUR */
     .bg {
       position: absolute;
       inset: 0;
@@ -35,10 +40,6 @@
       filter: grayscale(30%);
     }
 
-    .content { transition: transform 0.8s ease, filter 0.8s ease; }
-    .content.blur { filter: blur(15px); transform: scale(0.9); pointer-events: none; }
-
-    /* 3. HERO SECTION */
     h1 { 
       font-size: 5rem; 
       letter-spacing: 15px; 
@@ -57,7 +58,8 @@
       font-weight: bold;
       letter-spacing: 2px;
       transition: 0.4s;
-      cursor: pointer;
+      text-decoration: none;
+      display: inline-block;
     }
 
     .start-btn:hover { 
@@ -66,137 +68,23 @@
       transform: translateY(-3px);
     }
 
-    /* 4. DARLING STYLE MODAL */
-    .login-overlay {
-      position: fixed;
-      inset: 0;
-      background: rgba(0, 0, 0, 0.85);
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      opacity: 0;
-      visibility: hidden;
-      transition: 0.5s;
-      z-index: 10;
-    }
-
-    .login-overlay.active { opacity: 1; visibility: visible; }
-
-    .login-card {
-      position: relative;
-      width: 360px;
-      padding: 45px 35px;
-      background: rgba(255, 255, 255, .08);
-      backdrop-filter: blur(25px);
-      border: 2px solid rgba(255, 105, 180, .4);
-      border-radius: 25px;
-      box-shadow: 0 35px 90px rgba(0,0,0,0.6), inset 0 1px 0 rgba(255,255,255,0.1);
-      transition: all .4s cubic-bezier(.68,-.55,.265,1.55);
-    }
-
-    .login-card h2 { 
-      font-weight: 900;
-      font-size: 28px;
-      margin-bottom: 25px; 
-      background: linear-gradient(135deg, var(--pink), var(--hotpink));
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      letter-spacing: 2px;
-    }
-
-    input {
-      width: 100%;
-      padding: 16px 20px;
-      margin: 10px 0;
-      background: rgba(255, 255, 255, .05);
-      border: 2px solid rgba(255, 105, 180, .3);
-      border-radius: 15px;
-      color: #fff;
-      outline: none;
-      transition: all 0.4s ease;
-    }
-
-    input:focus { 
-      border-color: var(--hotpink); 
-      background: rgba(255, 255, 255, .1); 
-      box-shadow: 0 0 15px rgba(255, 20, 147, 0.3);
-      transform: translateY(-2px);
-    }
-
-    .forgot-pass {
-      display: block;
-      margin-top: 5px;
-      color: var(--darkpink);
-      font-size: 13px;
-      text-decoration: none;
-      text-align: right;
-      transition: 0.3s;
-    }
-    .forgot-pass:hover { color: #fff; text-shadow: 0 0 10px var(--hotpink); }
-
-    .login-submit {
-      width: 100%;
-      padding: 18px;
-      margin-top: 25px;
-      background: linear-gradient(135deg, var(--pink), var(--hotpink));
-      border: none;
-      color: white;
-      border-radius: 15px;
-      font-weight: 900;
-      text-transform: uppercase;
-      letter-spacing: 1px;
-      cursor: pointer;
-      box-shadow: 0 15px 45px rgba(255, 20, 147, 0.4);
-      transition: 0.5s cubic-bezier(.68,-.55,.265,1.55);
-    }
-
-    .login-submit:hover { 
-      transform: translateY(-5px);
-      box-shadow: 0 20px 60px rgba(255, 20, 147, 0.6);
-    }
-
-    .cancel-txt {
-      margin-top: 20px;
-      font-size: 11px;
-      opacity: 0.5;
-      letter-spacing: 2px;
-      cursor: pointer;
-    }
-    .cancel-txt:hover { opacity: 1; color: var(--hotpink); }
-
   </style>
 </head>
+
 <body>
 
   <div class="bg"></div>
 
-  <div class="content" id="main-content">
-    <p style="color: var(--hotpink); letter-spacing: 5px; font-weight: 300;">WEB DESIGN FINALS</p>
+  <div>
+    <p style="color: var(--hotpink); letter-spacing: 5px; font-weight: 300;">
+      WEB DESIGN FINALS
+    </p>
+
     <h1>JOURNEY</h1>
-    <button class="start-btn" onclick="toggleLogin()">ENTER PORTFOLIO</button>
-  </div>
 
-  <div class="login-overlay" id="login-modal">
-    <div class="login-card">
-      <h2>IDENTIFY</h2>
-      <form action="activity6.html"> <input type="text" placeholder="Darling name.." required>
-        <input type="password" placeholder="Secret code.." required>
-        <a href="#" class="forgot-pass">Forgot Password?</a>
-        <button type="submit" class="login-submit">Login</button>
-      </form>
-      <p class="cancel-txt" onclick="toggleLogin()">[ BACK ]</p>
-    </div>
+    <!-- ✅ GO TO LOGIN PAGE -->
+    <a href="activity6.html" class="start-btn">ENTER PORTFOLIO</a>
   </div>
-
-  <script>
-    // Logic to toggle modal visibility and background blur
-    function toggleLogin() {
-      const modal = document.getElementById('login-modal');
-      const content = document.getElementById('main-content');
-      modal.classList.toggle('active');
-      content.classList.toggle('blur');
-    }
-  </script>
 
 </body>
 </html>
