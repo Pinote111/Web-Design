@@ -5,11 +5,11 @@
   <title>DESIGN PORTFOLIO</title>
   <link rel="icon" type="image/gif" href="https://i.pinimg.com/originals/bc/11/80/bc11809c97271e15b7495b7ccd880ab7.gif">
   <style>
-    /* 1. GLOBAL SETTINGS */
+    /* 1. CONFIGURATION & THEME */
     :root {
       --pink: #ff1493;
       --hotpink: #ff69b4;
-      --darkpink: #8b0a50; /* Added your requested darkpink */
+      --darkpink: #8b0a50;
     }
 
     * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Poppins', sans-serif; }
@@ -25,7 +25,7 @@
       overflow: hidden;
     }
 
-    /* 2. BACKGROUND & OVERLAY */
+    /* 2. BACKGROUND & BLUR */
     .bg {
       position: absolute;
       inset: 0;
@@ -35,15 +35,16 @@
       filter: grayscale(30%);
     }
 
-    /* 3. LANDING CONTENT */
     .content { transition: transform 0.8s ease, filter 0.8s ease; }
-    .content.blur { filter: blur(10px); transform: scale(0.9); pointer-events: none; }
+    .content.blur { filter: blur(15px); transform: scale(0.9); pointer-events: none; }
 
+    /* 3. HERO SECTION */
     h1 { 
       font-size: 5rem; 
       letter-spacing: 15px; 
       text-shadow: 0 0 20px var(--darkpink); 
       margin: 10px 0;
+      font-weight: 900;
     }
 
     .start-btn {
@@ -52,7 +53,6 @@
       border: 2px solid var(--darkpink);
       background: rgba(139, 10, 80, 0.1);
       color: #fff;
-      text-decoration: none;
       border-radius: 50px;
       font-weight: bold;
       letter-spacing: 2px;
@@ -66,7 +66,7 @@
       transform: translateY(-3px);
     }
 
-    /* 4. LOGIN MODAL STYLING */
+    /* 4. DARLING STYLE MODAL */
     .login-overlay {
       position: fixed;
       inset: 0;
@@ -83,57 +83,86 @@
     .login-overlay.active { opacity: 1; visibility: visible; }
 
     .login-card {
-      background: rgba(20, 20, 20, 0.9);
-      padding: 50px;
-      border-radius: 20px;
-      border: 1px solid var(--darkpink);
-      width: 100%;
-      max-width: 400px;
-      backdrop-filter: blur(20px);
-      box-shadow: 0 25px 50px rgba(0,0,0,0.5);
+      position: relative;
+      width: 360px;
+      padding: 45px 35px;
+      background: rgba(255, 255, 255, .08);
+      backdrop-filter: blur(25px);
+      border: 2px solid rgba(255, 105, 180, .4);
+      border-radius: 25px;
+      box-shadow: 0 35px 90px rgba(0,0,0,0.6), inset 0 1px 0 rgba(255,255,255,0.1);
+      transition: all .4s cubic-bezier(.68,-.55,.265,1.55);
     }
 
-    .login-card h2 { color: var(--hotpink); margin-bottom: 30px; letter-spacing: 3px; }
+    .login-card h2 { 
+      font-weight: 900;
+      font-size: 28px;
+      margin-bottom: 25px; 
+      background: linear-gradient(135deg, var(--pink), var(--hotpink));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      letter-spacing: 2px;
+    }
 
-    .input-group { margin-bottom: 20px; text-align: left; }
-    
     input {
       width: 100%;
-      padding: 12px 15px;
-      background: rgba(255, 255, 255, 0.05);
-      border: 1px solid rgba(255, 105, 180, 0.2);
-      border-radius: 8px;
+      padding: 16px 20px;
+      margin: 10px 0;
+      background: rgba(255, 255, 255, .05);
+      border: 2px solid rgba(255, 105, 180, .3);
+      border-radius: 15px;
       color: #fff;
       outline: none;
-      transition: 0.3s;
+      transition: all 0.4s ease;
     }
 
-    input:focus { border-color: var(--hotpink); background: rgba(255, 255, 255, 0.1); }
+    input:focus { 
+      border-color: var(--hotpink); 
+      background: rgba(255, 255, 255, .1); 
+      box-shadow: 0 0 15px rgba(255, 20, 147, 0.3);
+      transform: translateY(-2px);
+    }
 
     .forgot-pass {
       display: block;
-      margin-top: 10px;
-      color: var(--darkpink); /* Changed to darkpink as requested */
-      font-size: 12px;
+      margin-top: 5px;
+      color: var(--darkpink);
+      font-size: 13px;
       text-decoration: none;
       text-align: right;
       transition: 0.3s;
     }
-    .forgot-pass:hover { color: var(--hotpink); text-shadow: 0 0 5px var(--hotpink); }
+    .forgot-pass:hover { color: #fff; text-shadow: 0 0 10px var(--hotpink); }
 
     .login-submit {
       width: 100%;
-      padding: 12px;
+      padding: 18px;
       margin-top: 25px;
-      background: var(--darkpink);
+      background: linear-gradient(135deg, var(--pink), var(--hotpink));
       border: none;
       color: white;
-      border-radius: 8px;
-      font-weight: bold;
+      border-radius: 15px;
+      font-weight: 900;
+      text-transform: uppercase;
+      letter-spacing: 1px;
       cursor: pointer;
-      transition: 0.3s;
+      box-shadow: 0 15px 45px rgba(255, 20, 147, 0.4);
+      transition: 0.5s cubic-bezier(.68,-.55,.265,1.55);
     }
-    .login-submit:hover { background: var(--pink); box-shadow: 0 0 20px var(--pink); }
+
+    .login-submit:hover { 
+      transform: translateY(-5px);
+      box-shadow: 0 20px 60px rgba(255, 20, 147, 0.6);
+    }
+
+    .cancel-txt {
+      margin-top: 20px;
+      font-size: 11px;
+      opacity: 0.5;
+      letter-spacing: 2px;
+      cursor: pointer;
+    }
+    .cancel-txt:hover { opacity: 1; color: var(--hotpink); }
 
   </style>
 </head>
@@ -150,21 +179,17 @@
   <div class="login-overlay" id="login-modal">
     <div class="login-card">
       <h2>IDENTIFY</h2>
-      <form action="activity6.html">
-        <div class="input-group">
-          <input type="text" placeholder="Username" required>
-        </div>
-        <div class="input-group">
-          <input type="password" placeholder="Password" required>
-          <a href="#" class="forgot-pass">Forgot Password?</a>
-        </div>
-        <button type="submit" class="login-submit">LOGIN</button>
+      <form action="activity6.html"> <input type="text" placeholder="Darling name.." required>
+        <input type="password" placeholder="Secret code.." required>
+        <a href="#" class="forgot-pass">Forgot Password?</a>
+        <button type="submit" class="login-submit">Login</button>
       </form>
-      <p style="margin-top: 20px; font-size: 11px; opacity: 0.5; cursor: pointer;" onclick="toggleLogin()">Cancel</p>
+      <p class="cancel-txt" onclick="toggleLogin()">[ BACK ]</p>
     </div>
   </div>
 
   <script>
+    // Logic to toggle modal visibility and background blur
     function toggleLogin() {
       const modal = document.getElementById('login-modal');
       const content = document.getElementById('main-content');
