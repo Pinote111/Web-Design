@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Activity6.html</title>
+<link rel="icon" type="image/gif" href="https://i.pinimg.com/originals/bc/11/80/bc11809c97271e15b7495b7ccd880ab7.gif">
+<style>
+*{margin:0;box-sizing:border-box;font-family:'Poppins',Arial,sans-serif}
+:root{--pink:#ff1493;--hotpink:#ff69b4}
+
+.login{
+  height:100vh;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  position:relative;
+  background:url("https://i.pinimg.com/736x/74/82/b1/7482b16e16552df4f70b331cb7915a6a.jpg") center/cover no-repeat fixed;
+}
+
+.login::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:linear-gradient(135deg,rgba(26,10,30,.7) 0%,rgba(42,26,58,.6) 50%,rgba(255,20,147,.3) 100%);
+  backdrop-filter:blur(1px);
+}
+
+.card{
+  position:relative;
+  z-index:1;
+  width:340px;
+  padding:45px 35px;
+  text-align:center;
+  color:#fff;
+  background:rgba(255,255,255,.12);
+  backdrop-filter:blur(25px);
+  border:2px solid rgba(255,105,180,.4);
+  border-radius:25px;
+  box-shadow:0 35px 90px rgba(0,0,0,.6),inset 0 1px 0 rgba(255,255,255,.2);
+  transition:all .4s cubic-bezier(.68,-.55,.265,1.55);
+}
+
+.card:hover{
+  transform:translateY(-12px) scale(1.03);
+  box-shadow:0 50px 120px rgba(255,20,147,.7),inset 0 1px 0 rgba(255,255,255,.3);
+  border-color:var(--hotpink);
+}
+
+h2{
+  font:900 28px/1.2 'Poppins',serif;
+  margin-bottom:30px;
+  background:linear-gradient(135deg,var(--pink),var(--hotpink));
+  -webkit-background-clip:text;
+  -webkit-text-fill-color:transparent;
+  background-clip:text;
+  text-shadow:0 0 30px var(--pink);
+  letter-spacing:-.5px;
+}
+
+input{
+  width:100%;
+  padding:18px 20px;
+  margin:15px 0;
+  border:2px solid rgba(255,105,180,.5);
+  border-radius:15px;
+  outline:none;
+  background:rgba(255,255,255,.1);
+  backdrop-filter:blur(15px);
+  color:#fff;
+  font-size:16px;
+  font-weight:400;
+  transition:all .4s ease;
+}
+
+input::placeholder{
+  color:rgba(255,255,255,.6);
+}
+
+input:focus{
+  border-color:var(--hotpink);
+  box-shadow:0 0 0 4px rgba(255,105,180,.2);
+  background:rgba(255,255,255,.15);
+  transform:translateY(-3px);
+}
+    .forgot-pass{
+      text-align:center;
+      margin-top:25px;
+    }
+    
+    .forgot-pass a{
+      color:var(--hotpink);
+      text-decoration:none;
+      font-size:14px;
+      font-weight:500;
+      transition:all .3s ease;
+    }
+    
+    .forgot-pass a:hover{
+      text-shadow:0 0 15px var(--hotpink);
+      color:#fff;
+    }
+button{
+  width:100%;
+  padding:20px;
+  margin:20px 0 10px;
+  border:2px solid var(--pink);
+  border-radius:15px;
+  outline:none;
+  background:linear-gradient(135deg,var(--pink),var(--hotpink));
+  color:#fff;
+  font:700 18px 'Poppins',serif;
+  font-weight:900;
+  cursor:pointer;
+  transition:all .5s cubic-bezier(.68,-.55,.265,1.55);
+  text-transform:uppercase;
+  letter-spacing:1px;
+  box-shadow:0 15px 45px rgba(255,20,147,.5);
+  position:relative;
+  overflow:hidden;
+}
+
+button:hover{
+  transform:translateY(-8px) scale(1.02);
+  box-shadow:0 25px 70px rgba(255,20,147,.8);
+  background:linear-gradient(135deg,var(--hotpink),var(--pink));
+}
+
+button:active{
+  transform:translateY(-3px);
+}
+
+.marquee{
+  position:fixed;
+  top:15px;
+  left:50%;
+  transform:translateX(-50%);
+  width:95%;
+  z-index:1000;
+  color:var(--hotpink);
+  font:700 20px 'Poppins',serif;
+  text-shadow:0 0 25px var(--pink);
+  background:rgba(0,0,0,.85);
+  padding:15px 25px;
+  border-radius:50px;
+  backdrop-filter:blur(25px);
+  border:2px solid var(--pink);
+  box-shadow:0 12px 40px rgba(255,20,147,.5);
+  animation:slide 18s linear infinite;
+}
+
+@keyframes slide{
+  0%{transform:translateX(-100%) translateX(-50%)}
+  100%{transform:translateX(100%) translateX(-50%)}
+}
+
+@keyframes float{
+  0%,100%{transform:translateY(0)}
+  50%{transform:translateY(-15px)}
+}
+
+@media(max-width:480px){
+  .card{width:90%;padding:35px 25px}
+  h2{font-size:24px}
+  input{padding:16px 18px;font-size:15px}
+  button{padding:18px;font-size:16px}
+}
+</style>
+</head>
+
+<body>
+
+  <section class="login">
+    <div class="card">
+      <h2>Darling,<br>
+      welcome back! </h2>
+      <form>
+        <input type="email" placeholder="Enter your darling name.." required>
+        <input type="password" placeholder="Enter your secret..." required>
+        <button type="submit" class="login-btn">Login</button>
+      </form>
+        <div class="forgot-pass">
+      <a href="#forgot">Forgot Password?</a>
+    </div>
+  </section>
+
+</body>
+</html>
