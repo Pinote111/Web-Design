@@ -1,239 +1,226 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>HTML IMAGE, FAVICON AND AUDIO</title>
+<meta charset="UTF-8">
+<title>HTML IMAGE, FAVICON AND AUDIO</title>
 
-  <link rel="icon" type="image/gif" href="https://i.pinimg.com/originals/bc/11/80/bc11809c97271e15b7495b7ccd880ab7.gif">
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800;900&display=swap" rel="stylesheet">
+<link rel="icon" type="image/gif" href="https://i.pinimg.com/originals/bc/11/80/bc11809c97271e15b7495b7ccd880ab7.gif">
 
-  <style>
-    /* Navigator Styling */
-    .navigator-container {
-      position: fixed;
-      bottom: 25px;
-      left: 50%;
-      transform: translateX(-50%);
-      z-index: 9999;
-      background: rgba(0, 0, 0, 0.8);
-      backdrop-filter: blur(15px);
-      padding: 12px 25px;
-      border-radius: 50px;
-      border: 1px solid #ff69b4;
-      display: flex;
-      align-items: center;
-      gap: 15px;
-      box-shadow: 0 10px 40px rgba(0,0,0,0.8);
-    }
+<!-- SAME FONT STYLE AS ACTIVITY 2 -->
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 
-    .nav-btn {
-      color: #ff69b4;
-      text-decoration: none;
-      width: 40px;
-      height: 40px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      border-radius: 50%;
-      font-weight: bold;
-      transition: 0.3s;
-    }
+<style>
 
-    .nav-btn.active {
-      background: #ff1493;
-      color: white;
-      box-shadow: 0 0 15px #ff1493;
-    }
+/* NAVIGATION */
+.navigator-container {
+  position: fixed;
+  bottom: 25px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 9999;
+  background: rgba(0, 0, 0, 0.8);
+  backdrop-filter: blur(15px);
+  padding: 12px 25px;
+  border-radius: 50px;
+  border: 1px solid #ff69b4;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  box-shadow: 0 10px 40px rgba(0,0,0,0.8);
+}
 
-    .nav-btn:hover:not(.active) {
-      background: rgba(255, 255, 255, 0.1);
-    }
+.nav-btn {
+  color: #ff69b4;
+  text-decoration: none;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  font-weight: bold;
+  transition: 0.3s;
+}
 
-    .arrow {
-      cursor: pointer;
-      font-size: 24px;
-      color: #ff1493;
-      background: none;
-      border: none;
-    }
+.nav-btn.active {
+  background: #ff1493;
+  color: white;
+  box-shadow: 0 0 15px #ff1493;
+}
 
-    /* RESET */
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      font-family: 'Poppins', sans-serif;
-    }
+.nav-btn:hover:not(.active) {
+  background: rgba(255, 255, 255, 0.1);
+}
 
-    body {
-      height: 100vh;
-      background: url('https://i.pinimg.com/originals/d1/92/3b/d1923bdafcb00c06be31856f09c6e552.gif') no-repeat center/cover;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      text-align: center;
-      color: #ff69b4;
-      position: relative;
-      padding-top: 40px;
-      overflow: hidden;
-    }
+.arrow {
+  cursor: pointer;
+  font-size: 24px;
+  color: #ff1493;
+  background: none;
+  border: none;
+}
 
-    marquee {
-      position: fixed;
-      bottom: 10px;
-      width: 100%;
-      z-index: 999;
-      color: #ffffff;
-      font-size: 12px;
-      font-weight: 700;
-      text-shadow: 2px 2px 10px #000;
-    }
+/* GLOBAL FONT → SAME AS ACTIVITY 2 */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
 
-    .overlay {
-      position: absolute;
-      top: 0;
-      left: 0;
-      height: 100%;
-      width: 100%;
-      background: rgba(0,0,0,.5);
-      backdrop-filter: blur(2px);
-    }
+/* BACKGROUND */
+body {
+  height: 100vh;
+  background: url('https://i.pinimg.com/originals/d1/92/3b/d1923bdafcb00c06be31856f09c6e552.gif') no-repeat center/cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
 
-    .content {
-      position: relative;
-      z-index: 1;
-    }
+/* OVERLAY */
+.overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.6);
+  backdrop-filter: blur(2px);
+}
 
-    /* ✅ UPDATED H1 (PROFESSIONAL FONT) */
-    h1 {
-      font-family: 'Poppins', sans-serif;
-      font-size: 80px;
-      font-weight: 800;
-      margin-bottom: 15px;
-      color: #fff;
-      letter-spacing: 2px;
-      text-shadow: 0 5px 20px rgba(0,0,0,0.9);
-      animation: glow 2s ease-in-out infinite alternate;
-    }
+/* TOP MARQUEE */
+.top-marquee {
+ position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 999;
+  font-size: 13px;
 
-    p {
-      font-size: 22px;
-      margin-bottom: 25px;
-      text-shadow: 2px 2px 8px #000;
-    }
+  background: rgba(0,0,0,0.75);
+  color: #ffb6e6;
+  font-weight: 600;
+  padding: 8px 0;
+  border-bottom: 1px solid #ff69b4;
+  letter-spacing: 1px;
+}
+/* CONTENT */
+.content {
+  position: relative;
+  z-index: 1;
+}
 
-    audio {
-      width: 350px;
-      height: 55px;
-      margin: 30px auto;
-      background: rgba(255,105,180,.3);
-      border-radius: 30px;
-      padding: 10px;
-      box-shadow: 0 10px 30px rgba(255,105,180,.6);
-      backdrop-filter: blur(15px);
-      transition: all .3s ease;
-    }
+/* TITLE → PINK + MODERN FONT */
+h1 {
+  font-size: 70px;
+  font-weight: 700;
+  color: #ff69b4;
+  text-shadow: 0 5px 20px rgba(0,0,0,0.8);
+}
 
-    audio:hover {
-      transform: scale(1.05);
-      box-shadow: 0 15px 40px rgba(255,20,147,.9);
-    }
+/* QUOTE → PINK + CLEAN */
+p {
+  font-size: 20px;
+  color: #ffb6e6;
+  margin-bottom: 25px;
+  text-shadow: 2px 2px 8px black;
+}
 
-    .btn {
-      padding: 15px 35px;
-      font-size: 12px;
-      border: none;
-      background: linear-gradient(145deg,#ff1493,#ff69b4);
-      color: #fff;
-      border-radius: 30px;
-      cursor: pointer;
-      transition: all .4s ease;
-      box-shadow: 0 10px 30px rgba(255,105,180,.7);
-      text-transform: uppercase;
-      letter-spacing: 1px;
-      font-weight: 700;
-    }
+/* AUDIO */
+audio {
+  width: 350px;
+  margin: 30px auto;
+  border-radius: 30px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+}
 
-    .btn:hover {
-      background: linear-gradient(145deg,#ff69b4,#ff1493);
-      transform: translateY(-5px) scale(1.1);
-      box-shadow: 0 20px 50px rgba(255,20,147,.9);
-    }
+/* BUTTON */
+.btn {
+  padding: 15px 35px;
+  font-size: 12px;
+  border: none;
+  background: linear-gradient(145deg,#ff1493,#ff69b4);
+  color: white;
+  border-radius: 30px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: 0.3s;
+}
 
-    @keyframes glow {
-      0% {
-        text-shadow: 0 5px 20px rgba(0,0,0,0.9), 0 0 20px #ff69b4;
-      }
-      100% {
-        text-shadow: 0 5px 20px rgba(0,0,0,0.9), 0 0 40px #ff1493;
-      }
-    }
-  </style>
+.btn:hover {
+  transform: translateY(-5px);
+  background: linear-gradient(145deg,#ff69b4,#ff1493);
+}
 
-  <!-- NAVIGATION -->
-  <div class="navigator-container">
-    <button class="arrow" onclick="navPrev()">‹</button>
-
-    <a href="activity6.html" class="nav-btn" id="link1">1</a>
-    <a href="activity5.html" class="nav-btn" id="link2">2</a>
-    <a href="activity4.html" class="nav-btn" id="link3">3</a>
-    <a href="activity2.html" class="nav-btn" id="link4">4</a>
-    <a href="activity3.html" class="nav-btn" id="link5">5</a>
-    <a href="index.html" class="nav-btn">🏠</a>
-
-    <button class="arrow" onclick="navNext()">›</button>
-  </div>
-
-  <script>
-    const navSequence = [
-      "activity6.html",
-      "activity5.html",
-      "activity4.html",
-      "activity2.html",
-      "activity3.html"
-    ];
-
-    const currentFile = window.location.pathname.split("/").pop() || "index.html";
-    const currentIndex = navSequence.indexOf(currentFile);
-
-    if (currentIndex !== -1) {
-      document.getElementById(`link${currentIndex + 1}`).classList.add('active');
-    }
-
-    function navNext() {
-      if (currentIndex < navSequence.length - 1) {
-        window.location.href = navSequence[currentIndex + 1];
-      }
-    }
-
-    function navPrev() {
-      if (currentIndex > 0) {
-        window.location.href = navSequence[currentIndex - 1];
-      }
-    }
-  </script>
+</style>
 </head>
 
 <body>
 
+<!-- TOP MARQUEE -->
+<div class="top-marquee">
   <marquee>ACTIVITY #4: HTML IMAGE, FAVICON & AUDIO</marquee>
+</div>
 
-  <div class="overlay"></div>
+<!-- NAVIGATION -->
+<div class="navigator-container">
+  <button class="arrow" onclick="navPrev()">‹</button>
 
-  <div class="content">
-    <h1>ZERO TWO</h1>
-    <p>"If you don't belong here, just build a place where you do."</p>
+  <a href="activity6.html" class="nav-btn" id="link1">1</a>
+  <a href="activity5.html" class="nav-btn" id="link2">2</a>
+  <a href="activity4.html" class="nav-btn" id="link3">3</a>
+  <a href="activity2.html" class="nav-btn" id="link4">4</a>
+  <a href="activity3.html" class="nav-btn" id="link5">5</a>
+  <a href="index.html" class="nav-btn">🏠</a>
 
-    <audio controls loop>
-      <source src="Darling.mp3" type="audio/mpeg">
-      Your browser needs audio support!
-    </audio>
+  <button class="arrow" onclick="navNext()">›</button>
+</div>
 
-    <br><br>
-    <button class="btn" onclick="window.location.href='activity2.html'">
-      More Darling! 💖
-    </button>
-  </div>
+<div class="overlay"></div>
+
+<div class="content">
+  <h1>ZERO TWO</h1>
+  <p>"If you don't belong here, just build a place where you do."</p>
+
+  <audio controls loop>
+    <source src="Darling.mp3" type="audio/mpeg">
+  </audio>
+
+  <br><br>
+
+  <button class="btn" onclick="window.location.href='activity2.html'">
+    More Darling 💖
+  </button>
+</div>
+
+<script>
+const navSequence = [
+  "activity6.html",
+  "activity5.html",
+  "activity4.html",
+  "activity2.html",
+  "activity3.html"
+];
+
+const currentFile = window.location.pathname.split("/").pop() || "index.html";
+const currentIndex = navSequence.indexOf(currentFile);
+
+if (currentIndex !== -1) {
+  document.getElementById(`link${currentIndex + 1}`).classList.add('active');
+}
+
+function navNext() {
+  if (currentIndex < navSequence.length - 1) {
+    window.location.href = navSequence[currentIndex + 1];
+  }
+}
+
+function navPrev() {
+  if (currentIndex > 0) {
+    window.location.href = navSequence[currentIndex - 1];
+  }
+}
+</script>
 
 </body>
 </html>
