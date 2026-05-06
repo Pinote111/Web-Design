@@ -7,6 +7,44 @@
   <link rel="icon" type="image/gif" href="https://i.pinimg.com/originals/bc/11/80/bc11809c97271e15b7495b7ccd880ab7.gif">
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;900&display=swap" rel="stylesheet">
   <style>
+    /* Navigator Styling */
+.navigator-container {
+  position: fixed;
+  bottom: 25px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 9999;
+  background: rgba(0, 0, 0, 0.8);
+  backdrop-filter: blur(15px);
+  padding: 12px 25px;
+  border-radius: 50px;
+  border: 1px solid #ff69b4;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  box-shadow: 0 10px 40px rgba(0,0,0,0.8);
+}
+.nav-btn {
+  color: #ff69b4;
+  text-decoration: none;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  font-weight: bold;
+  transition: 0.3s;
+}
+.nav-btn.active {
+  background: #ff1493;
+  color: white;
+  box-shadow: 0 0 15px #ff1493;
+}
+.nav-btn:hover:not(.active) {
+  background: rgba(255, 255, 255, 0.1);
+}
+.arrow { cursor: pointer; font-size: 24px; color: #ff1493; background: none; border: none; }
     *{margin:0;padding:0;box-sizing:border-box}
     :root{--pink: #c11c84 ;--hotpink:#ff007f;}
     
@@ -187,6 +225,49 @@
       .btn{padding:16px 35px;font-size:16px}
     }
   </style>
+  <div class="navigator-container">
+  <button class="arrow" onclick="navPrev()">‹</button>
+  
+  <a href="activity6.html" class="nav-btn" id="link1">1</a>
+  <a href="activity5.html" class="nav-btn" id="link2">2</a>
+  <a href="activity4.html" class="nav-btn" id="link3">3</a>
+  <a href="activity2.html" class="nav-btn" id="link4">4</a>
+  <a href="activity3.html" class="nav-btn" id="link5">5</a>
+  <a href="index.html" class="nav-btn">🏠</a>
+
+  <button class="arrow" onclick="navNext()">›</button>
+</div>
+<script>
+  // Sequence Definition (Activity 7 is now just this logic)
+  const navSequence = [
+    "activity6.html", 
+    "activity5.html", 
+    "activity4.html", 
+    "activity2.html", 
+    "activity3.html"
+  ];
+
+  // Identify current page
+  const currentFile = window.location.pathname.split("/").pop() || "index.html";
+  const currentIndex = navSequence.indexOf(currentFile);
+
+  // Set Active Class
+  if (currentIndex !== -1) {
+    document.getElementById(`link${currentIndex + 1}`).classList.add('active');
+  }
+
+  function navNext() {
+    if (currentIndex < navSequence.length - 1) {
+      window.location.href = navSequence[currentIndex + 1];
+    }
+  }
+
+  function navPrev() {
+    if (currentIndex > 0) {
+      window.location.href = navSequence[currentIndex - 1];
+    }
+  }
+</script>
 </head>
 <body>
   <!-- Floating Hearts -->
