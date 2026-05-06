@@ -1,4 +1,3 @@
-The "index.html" is the FINAL/COMPILATION of my project. 
-THANK YOU.
+The index.html file serves as the final compilation of the entire project. Thank you.
 
 # ATTENTION HERE!
