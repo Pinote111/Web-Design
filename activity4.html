@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Activity4.html</title>
+  <link rel="icon" type="image/gif" href="https://i.pinimg.com/originals/bc/11/80/bc11809c97271e15b7495b7ccd880ab7.gif">
+  <style>
+    *{margin:0;padding:0;box-sizing:border-box;font-family:Arial,sans-serif}
+    body{height:100vh;background:url('https://i.pinimg.com/originals/a9/89/ce/a989ced391db5317f5c1dba895f4f92f.gif') no-repeat center/cover;display:flex;justify-content:center;align-items:center;text-align:center;color:#ff69b4;position:relative;padding-top:40px}
+    marquee{position:fixed;Bottom:10px;width:100%;z-index:999;color:#ff1493;font-size:12px;font-weight:700;text-shadow:2px 2px 10px #000}
+    .overlay{position:absolute;top:0;left:0;height:100%;width:100%;background:rgba(0,0,0,.5);backdrop-filter:blur(2px)}
+    .content{position:relative;z-index:1}
+    h1{font-size:90px;margin-bottom:15px;text-shadow:3px 3px 15px #000;animation:glow 2s ease-in-out infinite alternate}
+    p{font-size:22px;margin-bottom:25px;text-shadow:2px 2px 8px #000}
+    audio{width:350px;height:55px;margin:30px auto;background:rgba(255,105,180,.3);border-radius:30px;padding:10px;box-shadow:0 10px 30px rgba(255,105,180,.6);backdrop-filter:blur(15px);transition:all .3s ease}
+    audio:hover{transform:scale(1.05);box-shadow:0 15px 40px rgba(255,20,147,.9)}
+    .btn{padding:15px 35px;font-size:20px;border:none;background:linear-gradient(145deg,#ff1493,#ff69b4);color:#fff;border-radius:30px;cursor:pointer;transition:all .4s ease;box-shadow:0 10px 30px rgba(255,105,180,.7);text-transform:uppercase;letter-spacing:1px;font-weight:700}
+    .btn:hover{background:linear-gradient(145deg,#ff69b4,#ff1493);transform:translateY(-5px) scale(1.1);box-shadow:0 20px 50px rgba(255,20,147,.9)}
+    @keyframes glow{0%{text-shadow:3px 3px 15px #000,0 0 20px #ff69b4}100%{text-shadow:3px 3px 15px #000,0 0 40px #ff1493}}
+  </style>
+</head>
+<body>
+  <marquee>ACTIVITY #4: HTML IMAGE, FAVICON & AUDIO</marquee>
+  
+  <div class="overlay"></div>
+  
+  <div class="content">
+    <h1>ZERO TWO </h1>
+    <p>"If you don't belong here, just build a place where you do."<p>
+    
+    <audio controls loop>
+      <source src="Darling.mp3" type="audio/mpeg">
+      Your browser needs audio support!
+    </audio>
+    
+    <br><br>
+    <button class="btn">More Darling! 💖</button>
+  </div>
+</body>
+</html>
