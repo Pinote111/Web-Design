@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Pagination</title>
+  <link rel="icon" type="image/gif" href="https://i.pinimg.com/originals/bc/11/80/bc11809c97271e15b7495b7ccd880ab7.gif">
+  <style>
+    *{margin:0;padding:0;box-sizing:border-box;font-family:'Poppins',Arial,sans-serif}
+    body{
+      height:100vh;
+      display:flex;flex-direction:column;
+      justify-content:center;align-items:center;
+      background:linear-gradient(135deg,#0f0a1a 0%,#1a0f2e 50%,#2a1a3a 100%);
+      position:relative;overflow:hidden;
+      color:#fff;
+    }
+    
+    body::before{
+      content:'';position:fixed;top:0;left:0;width:100%;height:100%;
+      background:url('https://i.pinimg.com/1200x/f7/21/05/f72105128f94c0486bff5e0e6b255fe8.jpg') center/cover;
+      opacity:.25;z-index:-2;animation:float 20s ease-in-out infinite;
+    }
+    
+    marquee{
+      position:fixed;Bottom:10px;color:var(--hotpink);
+      font:700 18px 'Poppins',serif;text-shadow:0 0 20px #ff1493;
+    }
+    
+    :root{--pink:#ff1493;--hotpink:#ff69b4}
+    
+    .pagination{
+      display:flex;align-items:center;gap:18px;
+      background:rgba(255,255,255,.1);backdrop-filter:blur(25px);
+      padding:25px 35px;border-radius:35px;
+      border:2px solid rgba(255,105,180,.4);
+      box-shadow:0 25px 70px rgba(0,0,0,.6);
+      transition:all .4s cubic-bezier(.68,-.55,.265,1.55);
+    }
+    
+    .pagination:hover{
+      box-shadow:0 35px 100px rgba(255,20,147,.7);
+      border-color:var(--hotpink);transform:translateY(-8px);
+    }
+    
+    .btn{
+      border:none;background:transparent;
+      font-size:24px;font-weight:900;cursor:pointer;
+      color:var(--hotpink);width:55px;height:55px;
+      border-radius:15px;transition:all .3s cubic-bezier(.68,-.55,.265,1.55);
+      backdrop-filter:blur(15px);display:flex;align-items:center;
+      justify-content:center;
+    }
+    
+    .btn:hover{
+      background:linear-gradient(135deg,var(--pink),var(--hotpink));
+      color:#fff;transform:scale(1.15) rotate(5deg);
+      box-shadow:0 15px 40px rgba(255,20,147,.6);
+    }
+    
+    .page{
+      width:55px;height:55px;border-radius:15px;
+      border:none;cursor:pointer;background:transparent;
+      font:700 18px 'Poppins',serif;color:rgba(255,255,255,.7);
+      transition:all .3s cubic-bezier(.68,-.55,.265,1.55);
+      backdrop-filter:blur(15px);
+    }
+    
+    .page.active{
+      background:linear-gradient(135deg,var(--pink),var(--hotpink));
+      color:#fff;font-weight:900;
+      transform:scale(1.1);box-shadow:0 12px 35px rgba(255,20,147,.7);
+      text-shadow:0 0 15px #fff;
+    }
+    
+    .page:hover:not(.active){
+      color:#fff;background:rgba(255,255,255,.2);
+      transform:scale(1.1);box-shadow:0 10px 30px rgba(255,105,180,.4);
+    }
+    
+    @keyframes float{
+      0%,100%{transform:translateY(0) scale(1)}
+      50%{transform:translateY(-15px) scale(1.03)}
+    }
+    
+    @media(max-width:480px){
+      .pagination{gap:12px;padding:20px 25px}
+      .btn,.page{width:45px;height:45px;font-size:20px}
+      .page{font-size:16px}
+      marquee{font-size:16px;padding:10px 20px;width:90%}
+    }
+  </style>
+</head>
+<body>
+<marquee>
+  ACTIVITY 7 : PAGINATION
+</marquee>
+
+<div class="pagination">
+  <button class="btn" onclick="prev()">‹</button>
+
+  <button class="page active" onclick="setPage(1)">1</button>
+  <button class="page" onclick="setPage(2)">2</button>
+  <button class="page" onclick="setPage(3)">3</button>
+  <button class="page" onclick="setPage(4)">4</button>
+  <button class="page" onclick="setPage(5)">5</button>
+
+  <button class="btn" onclick="next()">›</button>
+</div>
+
+<script>
+  let current = 1;
+  const total = 5;
+
+  function setPage(page) {
+    current = page;
+    updateUI();
+  }
+
+  function prev() {
+    if (current > 1) {
+      current--;
+      updateUI();
+    }
+  }
+
+  function next() {
+    if (current < total) {
+      current++;
+      updateUI();
+    }
+  }
+
+  function updateUI() {
+    const buttons = document.querySelectorAll(".page");
+    buttons.forEach((btn, index) => {
+      btn.classList.remove("active");
+      if (index === current - 1) {
+        btn.classList.add("active");
+      }
+    });
+  }
+</script>
+
+</body>
+</html>
