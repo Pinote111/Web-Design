@@ -1,13 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>HERO PAGE</title>
-  <link rel="icon" type="image/gif" href="https://i.pinimg.com/originals/bc/11/80/bc11809c97271e15b7495b7ccd880ab7.gif">
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;900&display=swap" rel="stylesheet">
-  <style>
-    /* Navigator Styling */
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>HERO PAGE</title>
+
+<link rel="icon" type="image/gif" href="https://i.pinimg.com/originals/bc/11/80/bc11809c97271e15b7495b7ccd880ab7.gif">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;900&display=swap" rel="stylesheet">
+
+<style>
+/* ================= NAVIGATION (UNCHANGED) ================= */
 .navigator-container {
   position: fixed;
   bottom: 25px;
@@ -24,6 +26,7 @@
   gap: 15px;
   box-shadow: 0 10px 40px rgba(0,0,0,0.8);
 }
+
 .nav-btn {
   color: #ff69b4;
   text-decoration: none;
@@ -36,211 +39,188 @@
   font-weight: bold;
   transition: 0.3s;
 }
+
 .nav-btn.active {
   background: #ff1493;
   color: white;
   box-shadow: 0 0 15px #ff1493;
 }
+
 .nav-btn:hover:not(.active) {
   background: rgba(255, 255, 255, 0.1);
 }
-.arrow { cursor: pointer; font-size: 24px; color: #ff1493; background: none; border: none; }
-    *{margin:0;padding:0;box-sizing:border-box}
-    :root{--pink: #c11c84 ;--hotpink:#ff007f;}
-    
-    body{font-family:'Poppins',sans-serif;height:100vh;position:relative;overflow:hidden}
-    
-    .hero{
-      height:100vh;
-      display:flex;
-      justify-content:center;
-      align-items:center;
-      text-align:center;
-      color:#fff;
-      position:relative;
-      overflow:hidden;
-      background:url('https://i.pinimg.com/736x/90/79/d0/9079d07ee2da233c30e04be97252daed.jpg') center/cover no-repeat fixed;
-    }
-    
-    .hero::before{
-      content:"";
-      position:absolute;
-      inset:0;
-      background:linear-gradient(135deg,rgba(26,10,30,.6) 0%,rgba(42,26,58,.5) 50%,rgba(255,20,147,.25) 100%);
-      backdrop-filter:blur(1px);
-    }
-    
-    .hero::after{
-      content:"";
-      position:absolute;
-      width:300px;height:300px;
-      border-radius:50%;
-      background:var(--glow);
-      filter:blur(80px);
-      top:-80px;left:-80px;
-      animation:float 6s ease-in-out infinite;
-    }
-    
-    .hero::before::after{
-      content:"";
-      position:absolute;
-      width:220px;height:220px;
-      border-radius:50%;
-      background:var(--glow);
-      filter:blur(70px);
-      bottom:-60px;right:-60px;
-      animation:float 8s ease-in-out infinite reverse;
-    }
-    
-    .card{
-      position:relative;
-      z-index:1;
-      max-width:700px;
-      padding:60px 50px;
-      border-radius:30px;
-      background:rgba(255,255,255,.15);
-      backdrop-filter:blur(25px);
-      border:2px solid rgba(255,105,180,.4);
-      transition:all .5s cubic-bezier(.68,-.55,.265,1.55);
-      animation:fadeInUp 1.2s ease-out;
-    }
-    
-    .card:hover{
-      transform:translateY(-15px) scale(1.02);
-      border-color:var(--hotpink);
-    }
-    
-    h1{
-      font:900 4.5rem/1.1 'Poppins',serif;
-      margin-bottom:20px;
-      background:linear-gradient(135deg,var(--pink),var(--hotpink));
-      -webkit-background-clip:text;
-      -webkit-text-fill-color:transparent;
-      background-clip:text;
-      letter-spacing:-3px;
 
-  /* Subtle animation to keep it alive */
-  animation: textGlow 3s ease-in-out infinite alternate;
+.arrow {
+  cursor: pointer;
+  font-size: 24px;
+  color: #ff1493;
+  background: none;
+  border: none;
 }
-  @keyframes textGlow {
-  from {
-    filter: drop-shadow(0 5px 10px rgba(0,0,0,0.8)) 
-            drop-shadow(0 0 20px rgba(255,20,147,0.3));
-  }
-  to {
-    filter: drop-shadow(0 5px 15px rgba(0,0,0,1)) 
-            drop-shadow(0 0 40px rgba(255,20,147,0.6));
-  }
-    }
-    
-    p{
-      margin-bottom:40px;
-      opacity:.95;
-      line-height:1.6;
-      font-size:1.25rem;
-      font-weight:300;
-      text-shadow:0 3px 20px rgba(0,0,0,.8);
-      max-width:600px;
-      margin-left:auto;
-      margin-right:auto;
-    }
-    
-    .btns{display:flex;gap:25px;justify-content:center;flex-wrap:wrap}
-    
-    .btn{
-      padding:18px 45px;
-      border-radius:50px;
-      text-decoration:none;
-      font:700 18px 'Poppins',serif;
-      font-weight:900;
-      transition:all .5s cubic-bezier(.68,-.55,.265,1.55);
-      position:relative;
-      overflow:hidden;
-      letter-spacing:1.5px;
-      text-transform:uppercase;
-      backdrop-filter:blur(20px);
-      animation:fadeInUp 1.2s ease-out .3s both;
-    }
-    
-    .primary{
-      background:linear-gradient(145deg,var(--pink),var(--hotpink));
-      color:#fff;
-      border:2px solid var(--pink);
-      box-shadow:0 20px 60px rgba(255,20,147,.6);
-    }
-    
-    .secondary {
-    background: rgba(255, 255, 255, 0.1);
-    color: #ffffff;
-    border: 3px solid var(--hotpink);
-    box-shadow: 0 0 20px rgba(255, 0, 127, 0.4);
-    backdrop-filter: blur(10px);
-    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
-  }
-    
-    .primary:hover{
-      transform:translateY(-12px) scale(1.05);
-      box-shadow:0 35px 90px rgba(255,20,147,.9);
-      background:linear-gradient(145deg,var(--hotpink),var(--pink));
-    }
-    
-    .secondary:hover{
-      background:linear-gradient(145deg,var(--hotpink),var(--pink));
-      color:#fff;
-      transform:translateY(-12px) scale(1.05);
-      box-shadow:0 35px 90px rgba(255,20,147,.8);
-    }
-    
-    .floating-hearts{
-      position:fixed;top:0;left:0;width:100%;height:100%;
-      pointer-events:none;z-index:2;
-    }
-    .heart{
-      position:absolute;color:var(--hotpink);font-size:22px;
-      animation:heartFloat 7s linear infinite;opacity:.8;
-    }
-    .heart:nth-child(1){left:15%;animation-delay:.5s}
-    .heart:nth-child(2){left:30%;animation-delay:1.5s}
-    .heart:nth-child(3){left:50%;animation-delay:2.5s}
-    .heart:nth-child(4){left:70%;animation-delay:3.5s}
-    .heart:nth-child(5){left:85%;animation-delay:4.5s}
-    
-    @keyframes glow{
-      0%{filter:drop-shadow(0 0 30px var(--pink))}
-      100%{filter:drop-shadow(0 0 60px var(--hotpink))}
-    }
-    
-    @keyframes fadeInUp{
-      0%{opacity:0;transform:translateY(40px)}
-      100%{opacity:1;transform:translateY(0)}
-    }
-    
-    @keyframes float{
-      0%,100%{transform:translateY(0) scale(1)}
-      50%{transform:translateY(-25px) scale(1.05)}
-    }
-    
-    @keyframes slide{
-      0%{transform:translateX(-100%) translateX(-50%)}
-      100%{transform:translateX(100%) translateX(-50%)}
-    }
-    
-    @keyframes heartFloat{
-      0%{transform:translateY(100vh) rotate(0deg);opacity:.8}
-      100%{transform:translateY(-120px) rotate(720deg);opacity:0}
-    }
-    
-    @media(max-width:600px){
-      h1{font-size:3rem;letter-spacing:-1px}
-      .card{padding:45px 30px;max-width:90%}
-      p{font-size:1.1rem}
-      .btns{flex-direction:column;align-items:center;gap:20px}
-      .btn{padding:16px 35px;font-size:16px}
-    }
-  </style>
-  <div class="navigator-container">
+
+/* ================= BASE ================= */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --pink: #ff69b4;
+  --hotpink: #ff1493;
+}
+
+/* ================= HERO ================= */
+body {
+  font-family: 'Poppins', sans-serif;
+  overflow: hidden;
+}
+
+.hero {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: white;
+  background: url('https://i.pinimg.com/1200x/31/81/72/31817271133d790c7d98529bb0631591.jpg') center/cover no-repeat;
+  position: relative;
+}
+
+/* DARK OVERLAY */
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    135deg,
+    rgba(10,10,20,0.7),
+    rgba(20,10,30,0.6),
+    rgba(255,20,147,0.25)
+  );
+  backdrop-filter: blur(2px);
+}
+
+/* GLOW ORBS */
+.hero::after {
+  content: "";
+  position: absolute;
+  width: 300px;
+  height: 300px;
+  background: rgba(255,20,147,0.4);
+  filter: blur(120px);
+  top: -80px;
+  left: -80px;
+  border-radius: 50%;
+  animation: float 6s ease-in-out infinite;
+}
+
+/* ================= CARD ================= */
+.card {
+  position: relative;
+  z-index: 2;
+  max-width: 750px;
+  padding: 60px 50px;
+  border-radius: 30px;
+  background: rgba(255,255,255,0.12);
+  backdrop-filter: blur(25px);
+  border: 1px solid rgba(255,105,180,0.4);
+  box-shadow: 0 25px 70px rgba(0,0,0,0.5);
+  animation: fadeIn 1.2s ease;
+  transition: 0.4s;
+}
+
+.card:hover {
+  transform: translateY(-10px);
+  border-color: var(--hotpink);
+}
+
+/* ================= TITLE (UPDATED: CLEAN WHITE) ================= */
+h1 {
+  font-size: 4rem;
+  font-weight: 900;
+  color: #ffffff;
+  margin-bottom: 20px;
+  letter-spacing: -2px;
+  text-shadow: 0 3px 10px rgba(0,0,0,0.6);
+}
+
+/* ================= TEXT ================= */
+p {
+  font-size: 1.2rem;
+  font-weight: 300;
+  opacity: 0.95;
+  line-height: 1.6;
+  margin-bottom: 35px;
+}
+
+/* ================= BUTTONS ================= */
+.btns {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.btn {
+  padding: 16px 40px;
+  border-radius: 50px;
+  text-decoration: none;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  transition: 0.4s;
+}
+
+.primary {
+  background: linear-gradient(145deg, var(--pink), var(--hotpink));
+  color: white;
+  box-shadow: 0 20px 50px rgba(255,20,147,0.5);
+}
+
+.primary:hover {
+  transform: translateY(-8px) scale(1.05);
+}
+
+.secondary {
+  background: rgba(255,255,255,0.1);
+  border: 2px solid var(--hotpink);
+  color: white;
+  backdrop-filter: blur(10px);
+}
+
+.secondary:hover {
+  background: var(--hotpink);
+  transform: translateY(-8px) scale(1.05);
+}
+
+/* ================= ANIMATIONS ================= */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes float {
+  0%,100% { transform: translateY(0); }
+  50% { transform: translateY(-20px); }
+}
+
+/* ================= RESPONSIVE ================= */
+@media (max-width: 600px) {
+  h1 { font-size: 2.5rem; }
+  .card { padding: 40px 25px; }
+  p { font-size: 1rem; }
+  .btns { flex-direction: column; }
+}
+</style>
+</head>
+
+<body>
+
+<!-- NAVIGATION -->
+<div class="navigator-container">
   <button class="arrow" onclick="navPrev()">‹</button>
-  
+
   <a href="activity6.html" class="nav-btn" id="link1">1</a>
   <a href="activity5.html" class="nav-btn" id="link2">2</a>
   <a href="activity4.html" class="nav-btn" id="link3">3</a>
@@ -250,60 +230,51 @@
 
   <button class="arrow" onclick="navNext()">›</button>
 </div>
-<script>
-  // Sequence Definition (Activity 7 is now just this logic)
-  const navSequence = [
-    "activity6.html", 
-    "activity5.html", 
-    "activity4.html", 
-    "activity2.html", 
-    "activity3.html"
-  ];
 
-  // Identify current page
-  const currentFile = window.location.pathname.split("/").pop() || "index.html";
-  const currentIndex = navSequence.indexOf(currentFile);
-
-  // Set Active Class
-  if (currentIndex !== -1) {
-    document.getElementById(`link${currentIndex + 1}`).classList.add('active');
-  }
-
-  function navNext() {
-    if (currentIndex < navSequence.length - 1) {
-      window.location.href = navSequence[currentIndex + 1];
-    }
-  }
-
-  function navPrev() {
-    if (currentIndex > 0) {
-      window.location.href = navSequence[currentIndex - 1];
-    }
-  }
-</script>
-</head>
-<body>
-  <!-- Floating Hearts -->
-  <div class="floating-hearts">
-    <div class="heart">💕</div>
-    <div class="heart">💖</div>
-    <div class="heart">💗</div>
-    <div class="heart">💕</div>
-    <div class="heart">💖</div>
-  </div>
-
-  <section class="hero">
-    <div class="card">
-      <h1>Creative Web Design</h1>
-      <p>
-        by: Pinote, Juliana A.<br><br>
-      A compilation of all activities showcasing design, creativity, and development skills.
+<!-- HERO -->
+<section class="hero">
+  <div class="card">
+    <h1>Creative Web Design</h1>
+    <p>
+      by: Pinote, Juliana A.<br><br>
+      A curated compilation of design exercises showcasing UI styling, animations, and front-end fundamentals.
     </p>
-      <div class="btns">
-       <a href="activity4.html" class="btn primary">Explore Portfolio</a>
-        <a href="#contact" class="btn secondary">Get Started</a>
-      </div>
+
+    <div class="btns">
+      <a href="activity4.html" class="btn primary">Explore Portfolio</a>
+      <a href="activity2.html" class="btn secondary">Get Started</a>
     </div>
-  </section>
+  </div>
+</section>
+
+<script>
+const navSequence = [
+  "activity6.html",
+  "activity5.html",
+  "activity4.html",
+  "activity2.html",
+  "activity3.html"
+];
+
+const currentFile = window.location.pathname.split("/").pop() || "index.html";
+const currentIndex = navSequence.indexOf(currentFile);
+
+if (currentIndex !== -1) {
+  document.getElementById(`link${currentIndex + 1}`).classList.add('active');
+}
+
+function navNext() {
+  if (currentIndex < navSequence.length - 1) {
+    window.location.href = navSequence[currentIndex + 1];
+  }
+}
+
+function navPrev() {
+  if (currentIndex > 0) {
+    window.location.href = navSequence[currentIndex - 1];
+  }
+}
+</script>
+
 </body>
 </html>
