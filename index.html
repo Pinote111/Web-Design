@@ -1,96 +1,139 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Web Development Activities Compilation</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MY WEB DESIGN PORTFOLIO</title>
+  <link rel="icon" type="image/gif" href="https://i.pinimg.com/originals/bc/11/80/bc11809c97271e15b7495b7ccd880ab7.gif">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;900&display=swap" rel="stylesheet">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    :root { --pink: #ff1493; --hotpink: #ff69b4; }
 
-    <!-- Simple Styling -->
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background: #f5f5f5;
-            margin: 0;
-            padding: 0;
-            text-align: center;
-        }
+    body {
+      font-family: 'Poppins', sans-serif;
+      height: 100vh;
+      background: #0a0a0a;
+      color: #fff;
+      overflow: hidden;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
 
-        header {
-            background: #333;
-            color: white;
-            padding: 20px;
-        }
+    /* Cinematic Background */
+    .bg-overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: url('https://i.pinimg.com/originals/a9/89/ce/a989ced391db5317f5c1dba895f4f92f.gif') center/cover;
+      opacity: 0.3;
+      z-index: -1;
+    }
 
-        h1 {
-            margin: 0;
-        }
+    .container {
+      text-align: center;
+      z-index: 1;
+      padding: 20px;
+    }
 
-        p {
-            margin-top: 5px;
-            font-size: 14px;
-        }
+    h1 {
+      font-size: 4rem;
+      font-weight: 900;
+      text-transform: uppercase;
+      letter-spacing: 5px;
+      margin-bottom: 10px;
+      text-shadow: 0 0 20px var(--pink);
+    }
 
-        nav {
-            margin-top: 30px;
-        }
+    p {
+      font-size: 1.2rem;
+      margin-bottom: 40px;
+      color: var(--hotpink);
+      letter-spacing: 2px;
+    }
 
-        ul {
-            list-style: none;
-            padding: 0;
-        }
+    /* Main Menu Links */
+    .menu-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+      max-width: 800px;
+      margin: 0 auto;
+    }
 
-        li {
-            margin: 12px 0;
-        }
+    .menu-item {
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 105, 180, 0.3);
+      padding: 30px 20px;
+      border-radius: 20px;
+      text-decoration: none;
+      color: #fff;
+      backdrop-filter: blur(10px);
+      transition: all 0.4s ease;
+    }
 
-        a {
-            text-decoration: none;
-            color: #333;
-            background: white;
-            padding: 10px 20px;
-            display: inline-block;
-            border-radius: 8px;
-            transition: 0.3s;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
-        }
+    .menu-item:hover {
+      background: var(--pink);
+      transform: translateY(-10px);
+      box-shadow: 0 15px 40px rgba(255, 20, 147, 0.6);
+      border-color: #fff;
+    }
 
-        a:hover {
-            background: #333;
-            color: white;
-            transform: scale(1.05);
-        }
+    .menu-item span {
+      display: block;
+      font-size: 24px;
+      font-weight: 700;
+    }
 
-        footer {
-            margin-top: 40px;
-            font-size: 12px;
-            color: gray;
-        }
-    </style>
+    .menu-item small {
+      font-size: 12px;
+      opacity: 0.8;
+      text-transform: uppercase;
+    }
+
+    /* Start Button */
+    .start-btn {
+      margin-top: 50px;
+      display: inline-block;
+      padding: 15px 50px;
+      background: #fff;
+      color: #000;
+      text-decoration: none;
+      font-weight: 900;
+      border-radius: 50px;
+      transition: 0.3s;
+    }
+
+    .start-btn:hover {
+      background: var(--pink);
+      color: #fff;
+      box-shadow: 0 0 30px var(--pink);
+    }
+  </style>
 </head>
-
 <body>
 
-<header>
-    <h1>My Web Development Activities</h1>
-    <p>Compilation of HTML & CSS Activities</p>
-</header>
+  <div class="bg-overlay"></div>
 
-<nav>
-    <ul>
-        <!-- FOLLOWING YOUR PROF'S ORDER -->
-        <li><a href="activity1.html">Activity 1: GitHub Account</a></li>
-        <li><a href="activity2.html">Activity 2: CSS Basic</a></li>
-        <li><a href="activity3.html">Activity 3: CSS Hover, Shadow & Transition</a></li>
-        <li><a href="activity4.html">Activity 4: HTML Image, Favicon & Audio</a></li>
-        <li><a href="activity5.html">Activity 5: Hero Page</a></li>
-        <li><a href="activity6.html">Activity 6: Login Page</a></li>
-        <li><a href="activity7.html">Activity 7: Pagination</a></li>
-    </ul>
-</nav>
+  <div class="container">
+    <small style="letter-spacing: 5px;">COLLECTED WORKS</small>
+    <h1>WEB DESIGN</h1>
+    <p>A Journey Through Code & Aesthetics</p>
 
-<footer>
-    <p>© 2026 | Web Development Compilation Project by: Pinote, Juliana A.</p>
-</footer>
+    <div class="menu-grid">
+      <a href="activity6.html" class="menu-item"><small>Step 01</small><span>LOGIN</span></a>
+      <a href="activity5.html" class="menu-item"><small>Step 02</small><span>HERO</span></a>
+      <a href="activity7.html" class="menu-item"><small>Step 03</small><span>PAGES</span></a>
+      <a href="activity4.html" class="menu-item"><small>Step 04</small><span>MEDIA</span></a>
+      <a href="activity2.html" class="menu-item"><small>Step 05</small><span>BASICS</span></a>
+      <a href="activity3.html" class="menu-item"><small>Step 06</small><span>EFFECTS</span></a>
+    </div>
+
+    <a href="activity6.html" class="start-btn">BEGIN JOURNEY →</a>
+  </div>
 
 </body>
 </html>
