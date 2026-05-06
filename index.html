@@ -2,138 +2,49 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>MY WEB DESIGN PORTFOLIO</title>
+  <title>DESIGN PORTFOLIO</title>
   <link rel="icon" type="image/gif" href="https://i.pinimg.com/originals/bc/11/80/bc11809c97271e15b7495b7ccd880ab7.gif">
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;900&display=swap" rel="stylesheet">
   <style>
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-    :root { --pink: #ff1493; --hotpink: #ff69b4; }
-
+    * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Poppins', sans-serif; }
     body {
-      font-family: 'Poppins', sans-serif;
       height: 100vh;
-      background: #0a0a0a;
-      color: #fff;
-      overflow: hidden;
+      background: #000;
       display: flex;
       justify-content: center;
       align-items: center;
+      text-align: center;
+      color: #fff;
+      overflow: hidden;
     }
-
-    /* Cinematic Background */
-    .bg-overlay {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
+    .bg {
+      position: absolute;
+      inset: 0;
       background: url('https://i.pinimg.com/originals/a9/89/ce/a989ced391db5317f5c1dba895f4f92f.gif') center/cover;
-      opacity: 0.3;
+      opacity: 0.2;
       z-index: -1;
     }
-
-    .container {
-      text-align: center;
-      z-index: 1;
-      padding: 20px;
-    }
-
-    h1 {
-      font-size: 4rem;
-      font-weight: 900;
-      text-transform: uppercase;
-      letter-spacing: 5px;
-      margin-bottom: 10px;
-      text-shadow: 0 0 20px var(--pink);
-    }
-
-    p {
-      font-size: 1.2rem;
-      margin-bottom: 40px;
-      color: var(--hotpink);
-      letter-spacing: 2px;
-    }
-
-    /* Main Menu Links */
-    .menu-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 20px;
-      max-width: 800px;
-      margin: 0 auto;
-    }
-
-    .menu-item {
-      background: rgba(255, 255, 255, 0.05);
-      border: 1px solid rgba(255, 105, 180, 0.3);
-      padding: 30px 20px;
-      border-radius: 20px;
-      text-decoration: none;
-      color: #fff;
-      backdrop-filter: blur(10px);
-      transition: all 0.4s ease;
-    }
-
-    .menu-item:hover {
-      background: var(--pink);
-      transform: translateY(-10px);
-      box-shadow: 0 15px 40px rgba(255, 20, 147, 0.6);
-      border-color: #fff;
-    }
-
-    .menu-item span {
-      display: block;
-      font-size: 24px;
-      font-weight: 700;
-    }
-
-    .menu-item small {
-      font-size: 12px;
-      opacity: 0.8;
-      text-transform: uppercase;
-    }
-
-    /* Start Button */
+    h1 { font-size: 5rem; letter-spacing: 10px; text-shadow: 0 0 20px #ff1493; }
     .start-btn {
-      margin-top: 50px;
-      display: inline-block;
-      padding: 15px 50px;
-      background: #fff;
-      color: #000;
-      text-decoration: none;
-      font-weight: 900;
-      border-radius: 50px;
-      transition: 0.3s;
-    }
-
-    .start-btn:hover {
-      background: var(--pink);
+      margin-top: 30px;
+      padding: 15px 40px;
+      border: 2px solid #ff1493;
+      background: rgba(255, 20, 147, 0.1);
       color: #fff;
-      box-shadow: 0 0 30px var(--pink);
+      text-decoration: none;
+      border-radius: 50px;
+      font-weight: bold;
+      transition: 0.3s;
+      display: inline-block;
     }
+    .start-btn:hover { background: #ff1493; box-shadow: 0 0 30px #ff1493; }
   </style>
 </head>
 <body>
-
-  <div class="bg-overlay"></div>
-
-  <div class="container">
-    <small style="letter-spacing: 5px;">COLLECTED WORKS</small>
-    <h1>WEB DESIGN</h1>
-    <p>A Journey Through Code & Aesthetics</p>
-
-    <div class="menu-grid">
-      <a href="activity6.html" class="menu-item"><small>Step 01</small><span>LOGIN</span></a>
-      <a href="activity5.html" class="menu-item"><small>Step 02</small><span>HERO</span></a>
-      <a href="activity7.html" class="menu-item"><small>Step 03</small><span>PAGES</span></a>
-      <a href="activity4.html" class="menu-item"><small>Step 04</small><span>MEDIA</span></a>
-      <a href="activity2.html" class="menu-item"><small>Step 05</small><span>BASICS</span></a>
-      <a href="activity3.html" class="menu-item"><small>Step 06</small><span>EFFECTS</span></a>
-    </div>
-
-    <a href="activity6.html" class="start-btn">BEGIN JOURNEY →</a>
+  <div class="bg"></div>
+  <div class="content">
+    <p style="color: #ff69b4; letter-spacing: 3px;">WEB DESIGN FINALS</p>
+    <h1>JOURNEY</h1>
+    <a href="activity6.html" class="start-btn">ENTER PORTFOLIO</a>
   </div>
-
 </body>
 </html>
