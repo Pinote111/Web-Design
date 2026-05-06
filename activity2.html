@@ -1,30 +1,37 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>CSS BASIC</title>
-  <style>
-    /* Navigator Styling */
+<title>CSS BASIC</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+<style>
+
+/* ================= NAVIGATION ================= */
 .navigator-container {
   position: fixed;
   bottom: 25px;
   left: 50%;
   transform: translateX(-50%);
   z-index: 9999;
-  background: rgba(0, 0, 0, 0.8);
+
+  background: rgba(0,0,0,0.75);
   backdrop-filter: blur(15px);
-  padding: 12px 25px;
+  padding: 12px 20px;
   border-radius: 50px;
   border: 1px solid #ff69b4;
+
   display: flex;
   align-items: center;
-  gap: 15px;
-  box-shadow: 0 10px 40px rgba(0,0,0,0.8);
+  gap: 12px;
+  box-shadow: 0 10px 40px rgba(0,0,0,0.7);
 }
+
 .nav-btn {
   color: #ff69b4;
   text-decoration: none;
-  width: 40px;
-  height: 40px;
+  width: 38px;
+  height: 38px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -32,61 +39,160 @@
   font-weight: bold;
   transition: 0.3s;
 }
+
 .nav-btn.active {
   background: #ff1493;
   color: white;
   box-shadow: 0 0 15px #ff1493;
 }
-.nav-btn:hover:not(.active) {
-  background: rgba(255, 255, 255, 0.1);
-}
-.arrow { cursor: pointer; font-size: 24px; color: #ff1493; background: none; border: none; }
-    body {
-      background-image: url('https://i.pinimg.com/736x/a4/8a/f4/a48af4a40d8163ac7713ea359661677c.jpg');
-      background-size: cover;
-      background-position: center;
-      background-attachment: fixed;
-      font-family: 'Georgia', serif;
-      padding: 40px;
-      min-height: 100vh;
-      position: relative;
-      overflow-x: hidden;
-    }
-    
-    body::before {
-      content: '';
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: rgba(255,20,147,0.15);
-      backdrop-filter: blur(1px);
-      z-index: 1;
-    }
-    
-    body > * {
-      position: relative;
-      z-index: 2;
-    }
 
-    marquee {
-      color: #ffffff;
-      font-family: 'Times New Roman', serif;
-      font-size: 20px;
-      font-weight: bold;
-      text-shadow: 3px 3px 8px rgba(0,0,0,0.9);
-      background: rgba(0,0,0,0.8);
-      padding: 12px 20px;
-      border-radius: 25px;
-      backdrop-filter: blur(15px);
-      border: 2px solid rgba(255,105,180,0.5);
-      box-shadow: 0 8px 25px rgba(255,105,180,0.4);
-    }
-  </style>
-  <div class="navigator-container">
+.nav-btn:hover:not(.active) {
+  background: rgba(255,255,255,0.1);
+}
+
+.arrow {
+  font-size: 22px;
+  color: #ff1493;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+/* ================= GLOBAL ================= */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+body {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 25px;
+
+  background: url('https://i.pinimg.com/736x/a4/8a/f4/a48af4a40d8163ac7713ea359661677c.jpg') center/cover fixed;
+  position: relative;
+}
+
+/* DARK OVERLAY */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.6);
+  backdrop-filter: blur(2px);
+  z-index: 0;
+}
+
+body > * {
+  position: relative;
+  z-index: 1;
+}
+
+/* ================= TEXT ================= */
+h1 {
+  color: white;
+  font-size: 34px;
+  text-shadow: 0 5px 25px rgba(0,0,0,0.8);
+}
+
+marquee {
+  color: #ff69b4;
+  font-weight: 600;
+  background: rgba(0,0,0,0.6);
+  padding: 10px 20px;
+  border-radius: 20px;
+  border: 1px solid #ff69b4;
+}
+
+/* ================= BUTTON LAYOUT ================= */
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 15px;
+  max-width: 900px;
+}
+
+/* ================= BASE BUTTON ================= */
+button {
+  padding: 12px 22px;
+  font-weight: 600;
+  cursor: pointer;
+  border: none;
+  font-size: 14px;
+  transition: 0.3s ease;
+}
+
+/* ================= BUTTON STYLES ================= */
+
+.uber-btn {
+  background: black;
+  color: white;
+}
+.uber-btn:hover { transform: translateY(-3px); background: #222; }
+
+.amazon-btn {
+  background: rgb(255,216,20);
+  color: black;
+  border-radius: 20px;
+}
+.amazon-btn:hover { transform: translateY(-3px); }
+
+.github-btn {
+  background: rgb(46,164,79);
+  color: white;
+  border-radius: 6px;
+}
+.github-btn:hover { transform: translateY(-3px); }
+
+.bootstrap-btn {
+  background: rgb(121,82,179);
+  color: white;
+  border-radius: 4px;
+}
+.bootstrap-btn:hover { transform: translateY(-3px); }
+
+.bootstrap-outline {
+  background: transparent;
+  border: 2px solid #aaa;
+  color: #ddd;
+  border-radius: 4px;
+}
+.bootstrap-outline:hover {
+  background: rgba(255,255,255,0.1);
+}
+
+.linkedin-btn {
+  background: rgb(10,102,194);
+  color: white;
+  border-radius: 25px;
+}
+.linkedin-btn:hover { transform: translateY(-3px); }
+
+.linkedin-outline {
+  background: white;
+  color: rgb(10,102,194);
+  border: 2px solid rgb(10,102,194);
+  border-radius: 25px;
+}
+.linkedin-outline:hover {
+  background: rgba(10,102,194,0.1);
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- NAVIGATION (KEPT EXACT SYSTEM) -->
+<div class="navigator-container">
   <button class="arrow" onclick="navPrev()">‹</button>
-  
+
   <a href="activity6.html" class="nav-btn" id="link1">1</a>
   <a href="activity5.html" class="nav-btn" id="link2">2</a>
   <a href="activity4.html" class="nav-btn" id="link3">3</a>
@@ -98,219 +204,50 @@
 </div>
 
 <script>
-  // Sequence Definition (Activity 7 is now just this logic)
-  const navSequence = [
-    "activity6.html", 
-    "activity5.html", 
-    "activity4.html", 
-    "activity2.html", 
-    "activity3.html"
-  ];
+const navSequence = [
+  "activity6.html",
+  "activity5.html",
+  "activity4.html",
+  "activity2.html",
+  "activity3.html"
+];
 
-  // Identify current page
-  const currentFile = window.location.pathname.split("/").pop() || "index.html";
-  const currentIndex = navSequence.indexOf(currentFile);
+const currentFile = window.location.pathname.split("/").pop() || "index.html";
+const currentIndex = navSequence.indexOf(currentFile);
 
-  // Set Active Class
-  if (currentIndex !== -1) {
-    document.getElementById(`link${currentIndex + 1}`).classList.add('active');
+if (currentIndex !== -1) {
+  document.getElementById(`link${currentIndex + 1}`).classList.add("active");
+}
+
+function navNext() {
+  if (currentIndex < navSequence.length - 1) {
+    window.location.href = navSequence[currentIndex + 1];
   }
+}
 
-  function navNext() {
-    if (currentIndex < navSequence.length - 1) {
-      window.location.href = navSequence[currentIndex + 1];
-    }
+function navPrev() {
+  if (currentIndex > 0) {
+    window.location.href = navSequence[currentIndex - 1];
   }
-
-  function navPrev() {
-    if (currentIndex > 0) {
-      window.location.href = navSequence[currentIndex - 1];
-    }
-  }
+}
 </script>
-</head>
-<body>
 
-<marquee>
-ACTIVITY 2: CSS BASIC 
-</marquee>
+<!-- TITLE -->
+<marquee>ACTIVITY #2: CSS BASIC — BUTTON STYLING</marquee>
 
-<br><br>
+<h1>Button Styles Practice</h1>
 
-<button class="zerotwo-pink-btn">Darling!</button>
-<style>
-  .zerotwo-pink-btn {
-    background: linear-gradient(145deg, #ff1493, #ff69b4, #ff1493);
-    color: #ffffff;
-    padding: 15px 35px;
-    border: none;
-    border-radius: 25px;
-    font-weight: bold;
-    text-shadow: 2px 2px 4px rgba(0,0,0,0.9);
-    box-shadow: 0 10px 30px rgba(255,105,180,0.7), inset 0 1px 4px rgba(255,255,255,0.3);
-    transition: all 0.3s ease;
-    backdrop-filter: blur(12px);
-    border: 1px solid rgba(255,255,255,0.2);
-    position: relative;
-    overflow: hidden;
-  }
-  .zerotwo-pink-btn::before {
-    content: '💕';
-    position: absolute;
-    right: 15px;
-    top: 50%;
-    transform: translateY(-50%);
-    font-size: 18px;
-    opacity: 0;
-    transition: all 0.3s ease;
-  }
-  .zerotwo-pink-btn:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 15px 40px rgba(255,105,180,0.9), inset 0 1px 4px rgba(255,255,255,0.4);
-  }
-  .zerotwo-pink-btn:hover::before {
-    opacity: 1;
-    animation: heartbeat 1.5s infinite;
-  }
-  @keyframes heartbeat {
-    0%, 100% { transform: translateY(-50%) scale(1); }
-    50% { transform: translateY(-50%) scale(1.2); }
-  }
-</style>
+<!-- BUTTONS -->
+<div class="container">
 
-<button class="darling-red-btn">Shine Effect</button>
-<style>
-  .darling-red-btn {
-    background: linear-gradient(145deg, #ff4500, #ff6347, #ff1493);
-      color: white;
-    padding: 15px 40px;
-    border: none;
-    border-radius: 30px;
-    font-weight: 500;
-    text-shadow: 2px 2px 4px rgba(0,0,0,0.9);
-    box-shadow: 0 8px 25px rgba(255,69,180,0.8), inset 0 1px 4px rgba(255,255,255,0.3);
-    position: relative;
-    overflow: hidden;
-    backdrop-filter: blur(12px);
-    border: 1px solid rgba(255,255,255,0.2);
-  }
-  .darling-red-btn::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: -100%;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.4), transparent);
-    transition: left 0.5s;
-  }
-  .darling-red-btn:hover::before {
-    left: 100%;
-  }
-  .darling-red-btn:hover {
-    transform: translateY(-3px);
-  }
-</style>
+  <button class="uber-btn">Request now</button>
+  <button class="amazon-btn">Add to Cart</button>
+  <button class="github-btn">Sign up</button>
+  <button class="bootstrap-btn">Get started</button>
+  <button class="bootstrap-outline">Download</button>
+  <button class="linkedin-btn">Apply now</button>
+  <button class="linkedin-outline">Save</button>
 
-<button class="klaxosaur-green-btn">Sign up</button>
-<style>
-  .klaxosaur-green-btn {
-    background: linear-gradient(45deg, #00ff7f, #32cd32, #00fa9a);
-    color: #000000;
-    padding: 15px 30px;
-    border: none;
-    border-radius: 50px;
-    font-weight: bold;
-    transition: all 0.4s ease;
-    backdrop-filter: blur(12px);
-    border: 1px solid rgba(255,255,255,0.2);
-  }
-  .klaxosaur-green-btn:hover {
-    transform: scale(1.05);
-  }
-</style>
-
-<button class="ape-purple-btn">Get started</button>
-<button class="ape-purple-outline">Download</button>
-<style>
-  .ape-purple-btn {
-    background: linear-gradient(145deg, #9932cc, #da70d6, #ba55d3);
-    color: #ffffff;
-    padding: 15px 25px;
-    border: 2px solid #ff69b4;
-    border-radius: 8px;
-    font-weight: bold;
-    text-shadow: 2px 2px 4px rgba(0,0,0,1);
-    margin-right: 15px;
-    backdrop-filter: blur(12px);
-  }
-  .ape-purple-btn:hover {
-    background: linear-gradient(145deg, #da70d6, #9932cc);
-    transform: translateY(-2px);
-  }
-  .ape-purple-outline {
-    background: rgba(255,255,255,0.95);
-    color: #9932cc;
-    padding: 15px 25px;
-    border: 2px solid #9932cc;
-    border-radius: 8px;
-    font-weight: 500;
-    backdrop-filter: blur(20px);
-  }
-  .ape-purple-outline:hover {
-    background: rgba(255,105,180,0.2);
-    transform: translateY(-3px);
-  }
-</style>
-
-<button class="strelizia-blue-btn">Apply now!</button>
-<button class="strelizia-blue-outline">Save</button>
-<style>
-  .strelizia-blue-btn {
-    background: linear-gradient(145deg, #1e90ff, #4169e1, #00bfff);
-    color: #ffffff;
-    padding: 15px 30px;
-    border: none;
-    border-radius: 40px;
-    font-weight: 600;
-    position: relative;
-    backdrop-filter: blur(15px);
-    border: 1px solid rgba(255,255,255,0.4);
-  }
-  .strelizia-blue-btn::after {
-    content: '🌸';
-    position: absolute;
-    right: 15px;
-    top: 50%;
-    transform: translateY(-50%);
-    font-size: 20px;
-    animation: sparkle 2s infinite;
-  }
-  @keyframes sparkle {
-    0%, 100% { opacity: 0.5; transform: translateY(-50%) scale(1) rotate(0deg); }
-    50% { opacity: 1; transform: translateY(-50%) scale(1.3) rotate(180deg); }
-  }
-  .strelizia-blue-outline {
-    background: rgba(255,255,255,0.95);
-    color: #1e90ff;
-    padding: 15px 30px;
-    border: 2px solid #1e90ff;
-    border-radius: 40px;
-    font-weight: 500;
-    backdrop-filter: blur(25px);
-  }
-  .strelizia-blue-outline:hover {
-    background: rgba(30,144,255,0.2);
-    transform: translateY(-4px);
-  }
-</style>
-
-<br><br><br><br><br>
-<div style="text-align: center;">
-  <a href="activity3.html" style="color: white; background: rgba(0,0,0,0.5); padding: 10px 20px; border-radius: 20px; text-decoration: none; border: 1px solid #ff69b4;">
-
-    Next: CSS Effects →
-  </a>
 </div>
 
 </body>
