@@ -3,7 +3,7 @@
 <head>
 <title>CSS BASIC</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800;900&display=swap" rel="stylesheet">
 
 <style>
 
@@ -15,7 +15,7 @@
   transform: translateX(-50%);
   z-index: 9999;
 
-  background: rgba(0,0,0,0.75);
+  background: rgba(0,0,0,0.8);
   backdrop-filter: blur(15px);
   padding: 12px 20px;
   border-radius: 50px;
@@ -58,7 +58,7 @@
   cursor: pointer;
 }
 
-/* ================= GLOBAL ================= */
+/* ================= GLOBAL (MATCH ACTIVITY 4 FONT FEEL) ================= */
 * {
   margin: 0;
   padding: 0;
@@ -68,14 +68,14 @@
 
 body {
   min-height: 100vh;
+  background: url('https://i.pinimg.com/736x/a4/8a/f4/a48af4a40d8163ac7713ea359661677c.jpg') center/cover fixed;
+  position: relative;
+
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   gap: 25px;
-
-  background: url('https://i.pinimg.com/736x/a4/8a/f4/a48af4a40d8163ac7713ea359661677c.jpg') center/cover fixed;
-  position: relative;
 }
 
 /* DARK OVERLAY */
@@ -93,32 +93,55 @@ body > * {
   z-index: 1;
 }
 
-/* ================= TEXT ================= */
+/* ================= MARQUEE (TOP LIKE ACTIVITY 4 STYLE) ================= */
+marquee {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 999;
+  font-size: 13px;
+
+  background: rgba(0,0,0,0.75);
+  color: #ffb6e6;
+  font-weight: 600;
+  padding: 8px 0;
+  border-bottom: 1px solid #ff69b4;
+  letter-spacing: 1px;
+}
+
+/* ================= TITLE (MATCH ACTIVITY 4 STYLE) ================= */
 h1 {
-  color: white;
-  font-size: 34px;
+  font-size: 40px;
+  font-weight: 900;
+  color: #ff69b4;
   text-shadow: 0 5px 25px rgba(0,0,0,0.8);
 }
 
-marquee {
-  color: #ff69b4;
-  font-weight: 600;
-  background: rgba(0,0,0,0.6);
-  padding: 10px 20px;
-  border-radius: 20px;
-  border: 1px solid #ff69b4;
+/* ================= CENTER CARD ================= */
+.showcase {
+  background: rgba(255,255,255,0.12);
+  backdrop-filter: blur(20px);
+  border: 2px solid rgba(255,105,180,0.4);
+  border-radius: 25px;
+  padding: 40px;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.5);
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  max-width: 900px;
 }
 
-/* ================= BUTTON LAYOUT ================= */
+/* BUTTON GROUP */
 .container {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   gap: 15px;
-  max-width: 900px;
 }
 
-/* ================= BASE BUTTON ================= */
+/* ================= BUTTONS (CLEAN + Poppins FEEL) ================= */
 button {
   padding: 12px 22px;
   font-weight: 600;
@@ -126,62 +149,20 @@ button {
   border: none;
   font-size: 14px;
   transition: 0.3s ease;
+  font-family: 'Poppins', sans-serif;
 }
 
-/* ================= BUTTON STYLES ================= */
+/* BUTTON STYLES */
+.uber-btn { background: black; color: white; }
+.amazon-btn { background: rgb(255,216,20); color: black; border-radius: 20px; }
+.github-btn { background: rgb(46,164,79); color: white; border-radius: 6px; }
+.bootstrap-btn { background: rgb(121,82,179); color: white; border-radius: 4px; }
+.bootstrap-outline { background: transparent; border: 2px solid #aaa; color: #ddd; }
+.linkedin-btn { background: rgb(10,102,194); color: white; border-radius: 25px; }
+.linkedin-outline { background: white; color: rgb(10,102,194); border: 2px solid rgb(10,102,194); }
 
-.uber-btn {
-  background: black;
-  color: white;
-}
-.uber-btn:hover { transform: translateY(-3px); background: #222; }
-
-.amazon-btn {
-  background: rgb(255,216,20);
-  color: black;
-  border-radius: 20px;
-}
-.amazon-btn:hover { transform: translateY(-3px); }
-
-.github-btn {
-  background: rgb(46,164,79);
-  color: white;
-  border-radius: 6px;
-}
-.github-btn:hover { transform: translateY(-3px); }
-
-.bootstrap-btn {
-  background: rgb(121,82,179);
-  color: white;
-  border-radius: 4px;
-}
-.bootstrap-btn:hover { transform: translateY(-3px); }
-
-.bootstrap-outline {
-  background: transparent;
-  border: 2px solid #aaa;
-  color: #ddd;
-  border-radius: 4px;
-}
-.bootstrap-outline:hover {
-  background: rgba(255,255,255,0.1);
-}
-
-.linkedin-btn {
-  background: rgb(10,102,194);
-  color: white;
-  border-radius: 25px;
-}
-.linkedin-btn:hover { transform: translateY(-3px); }
-
-.linkedin-outline {
-  background: white;
-  color: rgb(10,102,194);
-  border: 2px solid rgb(10,102,194);
-  border-radius: 25px;
-}
-.linkedin-outline:hover {
-  background: rgba(10,102,194,0.1);
+button:hover {
+  transform: translateY(-4px);
 }
 
 </style>
@@ -189,7 +170,28 @@ button {
 
 <body>
 
-<!-- NAVIGATION (KEPT EXACT SYSTEM) -->
+<!-- MARQUEE -->
+<marquee>ACTIVITY #2: CSS BASIC</marquee>
+
+<!-- TITLE -->
+<h1>Button Styles</h1>
+
+<!-- CENTER CARD -->
+<div class="showcase">
+  <div class="container">
+
+    <button class="uber-btn">Request now</button>
+    <button class="amazon-btn">Add to Cart</button>
+    <button class="github-btn">Sign up</button>
+    <button class="bootstrap-btn">Get started</button>
+    <button class="bootstrap-outline">Download</button>
+    <button class="linkedin-btn">Apply now</button>
+    <button class="linkedin-outline">Save</button>
+
+  </div>
+</div>
+
+<!-- NAVIGATION -->
 <div class="navigator-container">
   <button class="arrow" onclick="navPrev()">‹</button>
 
@@ -231,24 +233,6 @@ function navPrev() {
   }
 }
 </script>
-
-<!-- TITLE -->
-<marquee>ACTIVITY #2: CSS BASIC </marquee>
-
-<h1>Button Styles</h1>
-
-<!-- BUTTONS -->
-<div class="container">
-
-  <button class="uber-btn">Request now</button>
-  <button class="amazon-btn">Add to Cart</button>
-  <button class="github-btn">Sign up</button>
-  <button class="bootstrap-btn">Get started</button>
-  <button class="bootstrap-outline">Download</button>
-  <button class="linkedin-btn">Apply now</button>
-  <button class="linkedin-outline">Save</button>
-
-</div>
 
 </body>
 </html>
