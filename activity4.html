@@ -3,119 +3,237 @@
 <head>
   <meta charset="UTF-8">
   <title>HTML IMAGE, FAVICON AND AUDIO</title>
+
   <link rel="icon" type="image/gif" href="https://i.pinimg.com/originals/bc/11/80/bc11809c97271e15b7495b7ccd880ab7.gif">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800;900&display=swap" rel="stylesheet">
+
   <style>
     /* Navigator Styling */
-.navigator-container {
-  position: fixed;
-  bottom: 25px;
-  left: 50%;
-  transform: translateX(-50%);
-  z-index: 9999;
-  background: rgba(0, 0, 0, 0.8);
-  backdrop-filter: blur(15px);
-  padding: 12px 25px;
-  border-radius: 50px;
-  border: 1px solid #ff69b4;
-  display: flex;
-  align-items: center;
-  gap: 15px;
-  box-shadow: 0 10px 40px rgba(0,0,0,0.8);
-}
-.nav-btn {
-  color: #ff69b4;
-  text-decoration: none;
-  width: 40px;
-  height: 40px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border-radius: 50%;
-  font-weight: bold;
-  transition: 0.3s;
-}
-.nav-btn.active {
-  background: #ff1493;
-  color: white;
-  box-shadow: 0 0 15px #ff1493;
-}
-.nav-btn:hover:not(.active) {
-  background: rgba(255, 255, 255, 0.1);
-}
-.arrow { cursor: pointer; font-size: 24px; color: #ff1493; background: none; border: none; }
-    *{margin:0;padding:0;box-sizing:border-box;font-family:Arial,sans-serif}
-    body{height:100vh;background:url('https://i.pinimg.com/originals/a9/89/ce/a989ced391db5317f5c1dba895f4f92f.gif') no-repeat center/cover;display:flex;justify-content:center;align-items:center;text-align:center;color:#ff69b4;position:relative;padding-top:40px}
-    marquee{position:fixed;bottom:10px;width:100%;z-index:999;color:#ffffff;font-size:12px;font-weight:700;text-shadow:2px 2px 10px #000}
-    .overlay{position:absolute;top:0;left:0;height:100%;width:100%;background:rgba(0,0,0,.5);backdrop-filter:blur(2px)}
-    .content{position:relative;z-index:1}
-    h1{font-size:90px;margin-bottom:15px;text-shadow:3px 3px 15px #000;animation:glow 2s ease-in-out infinite alternate}
-    p{font-size:22px;margin-bottom:25px;text-shadow:2px 2px 8px #000}
-    audio{width:350px;height:55px;margin:30px auto;background:rgba(255,105,180,.3);border-radius:30px;padding:10px;box-shadow:0 10px 30px rgba(255,105,180,.6);backdrop-filter:blur(15px);transition:all .3s ease}
-    audio:hover{transform:scale(1.05);box-shadow:0 15px 40px rgba(255,20,147,.9)}
-    .btn{padding:15px 35px;font-size:12px;border:none;background:linear-gradient(145deg,#ff1493,#ff69b4);color:#fff;border-radius:30px;cursor:pointer;transition:all .4s ease;box-shadow:0 10px 30px rgba(255,105,180,.7);text-transform:uppercase;letter-spacing:1px;font-weight:700}
-    .btn:hover{background:linear-gradient(145deg,#ff69b4,#ff1493);transform:translateY(-5px) scale(1.1);box-shadow:0 20px 50px rgba(255,20,147,.9)}
-    @keyframes glow{0%{text-shadow:3px 3px 15px #000,0 0 20px #ff69b4}100%{text-shadow:3px 3px 15px #000,0 0 40px #ff1493}}
+    .navigator-container {
+      position: fixed;
+      bottom: 25px;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 9999;
+      background: rgba(0, 0, 0, 0.8);
+      backdrop-filter: blur(15px);
+      padding: 12px 25px;
+      border-radius: 50px;
+      border: 1px solid #ff69b4;
+      display: flex;
+      align-items: center;
+      gap: 15px;
+      box-shadow: 0 10px 40px rgba(0,0,0,0.8);
+    }
+
+    .nav-btn {
+      color: #ff69b4;
+      text-decoration: none;
+      width: 40px;
+      height: 40px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 50%;
+      font-weight: bold;
+      transition: 0.3s;
+    }
+
+    .nav-btn.active {
+      background: #ff1493;
+      color: white;
+      box-shadow: 0 0 15px #ff1493;
+    }
+
+    .nav-btn:hover:not(.active) {
+      background: rgba(255, 255, 255, 0.1);
+    }
+
+    .arrow {
+      cursor: pointer;
+      font-size: 24px;
+      color: #ff1493;
+      background: none;
+      border: none;
+    }
+
+    /* RESET */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    body {
+      height: 100vh;
+      background: url('https://i.pinimg.com/originals/d1/92/3b/d1923bdafcb00c06be31856f09c6e552.gif') no-repeat center/cover;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      color: #ff69b4;
+      position: relative;
+      padding-top: 40px;
+      overflow: hidden;
+    }
+
+    marquee {
+      position: fixed;
+      bottom: 10px;
+      width: 100%;
+      z-index: 999;
+      color: #ffffff;
+      font-size: 12px;
+      font-weight: 700;
+      text-shadow: 2px 2px 10px #000;
+    }
+
+    .overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 100%;
+      width: 100%;
+      background: rgba(0,0,0,.5);
+      backdrop-filter: blur(2px);
+    }
+
+    .content {
+      position: relative;
+      z-index: 1;
+    }
+
+    /* ✅ UPDATED H1 (PROFESSIONAL FONT) */
+    h1 {
+      font-family: 'Poppins', sans-serif;
+      font-size: 80px;
+      font-weight: 800;
+      margin-bottom: 15px;
+      color: #fff;
+      letter-spacing: 2px;
+      text-shadow: 0 5px 20px rgba(0,0,0,0.9);
+      animation: glow 2s ease-in-out infinite alternate;
+    }
+
+    p {
+      font-size: 22px;
+      margin-bottom: 25px;
+      text-shadow: 2px 2px 8px #000;
+    }
+
+    audio {
+      width: 350px;
+      height: 55px;
+      margin: 30px auto;
+      background: rgba(255,105,180,.3);
+      border-radius: 30px;
+      padding: 10px;
+      box-shadow: 0 10px 30px rgba(255,105,180,.6);
+      backdrop-filter: blur(15px);
+      transition: all .3s ease;
+    }
+
+    audio:hover {
+      transform: scale(1.05);
+      box-shadow: 0 15px 40px rgba(255,20,147,.9);
+    }
+
+    .btn {
+      padding: 15px 35px;
+      font-size: 12px;
+      border: none;
+      background: linear-gradient(145deg,#ff1493,#ff69b4);
+      color: #fff;
+      border-radius: 30px;
+      cursor: pointer;
+      transition: all .4s ease;
+      box-shadow: 0 10px 30px rgba(255,105,180,.7);
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      font-weight: 700;
+    }
+
+    .btn:hover {
+      background: linear-gradient(145deg,#ff69b4,#ff1493);
+      transform: translateY(-5px) scale(1.1);
+      box-shadow: 0 20px 50px rgba(255,20,147,.9);
+    }
+
+    @keyframes glow {
+      0% {
+        text-shadow: 0 5px 20px rgba(0,0,0,0.9), 0 0 20px #ff69b4;
+      }
+      100% {
+        text-shadow: 0 5px 20px rgba(0,0,0,0.9), 0 0 40px #ff1493;
+      }
+    }
   </style>
+
+  <!-- NAVIGATION -->
   <div class="navigator-container">
-  <button class="arrow" onclick="navPrev()">‹</button>
-  
-  <a href="activity6.html" class="nav-btn" id="link1">1</a>
-  <a href="activity5.html" class="nav-btn" id="link2">2</a>
-  <a href="activity4.html" class="nav-btn" id="link3">3</a>
-  <a href="activity2.html" class="nav-btn" id="link4">4</a>
-  <a href="activity3.html" class="nav-btn" id="link5">5</a>
-  <a href="index.html" class="nav-btn">🏠</a>
+    <button class="arrow" onclick="navPrev()">‹</button>
 
-  <button class="arrow" onclick="navNext()">›</button>
-</div>
+    <a href="activity6.html" class="nav-btn" id="link1">1</a>
+    <a href="activity5.html" class="nav-btn" id="link2">2</a>
+    <a href="activity4.html" class="nav-btn" id="link3">3</a>
+    <a href="activity2.html" class="nav-btn" id="link4">4</a>
+    <a href="activity3.html" class="nav-btn" id="link5">5</a>
+    <a href="index.html" class="nav-btn">🏠</a>
 
-<script>
-  // Sequence Definition (Activity 7 is now just this logic)
-  const navSequence = [
-    "activity6.html", 
-    "activity5.html", 
-    "activity4.html", 
-    "activity2.html", 
-    "activity3.html"
-  ];
+    <button class="arrow" onclick="navNext()">›</button>
+  </div>
 
-  // Identify current page
-  const currentFile = window.location.pathname.split("/").pop() || "index.html";
-  const currentIndex = navSequence.indexOf(currentFile);
+  <script>
+    const navSequence = [
+      "activity6.html",
+      "activity5.html",
+      "activity4.html",
+      "activity2.html",
+      "activity3.html"
+    ];
 
-  // Set Active Class
-  if (currentIndex !== -1) {
-    document.getElementById(`link${currentIndex + 1}`).classList.add('active');
-  }
+    const currentFile = window.location.pathname.split("/").pop() || "index.html";
+    const currentIndex = navSequence.indexOf(currentFile);
 
-  function navNext() {
-    if (currentIndex < navSequence.length - 1) {
-      window.location.href = navSequence[currentIndex + 1];
+    if (currentIndex !== -1) {
+      document.getElementById(`link${currentIndex + 1}`).classList.add('active');
     }
-  }
 
-  function navPrev() {
-    if (currentIndex > 0) {
-      window.location.href = navSequence[currentIndex - 1];
+    function navNext() {
+      if (currentIndex < navSequence.length - 1) {
+        window.location.href = navSequence[currentIndex + 1];
+      }
     }
-  }
-</script>
+
+    function navPrev() {
+      if (currentIndex > 0) {
+        window.location.href = navSequence[currentIndex - 1];
+      }
+    }
+  </script>
 </head>
+
 <body>
+
   <marquee>ACTIVITY #4: HTML IMAGE, FAVICON & AUDIO</marquee>
-  
+
   <div class="overlay"></div>
-  
+
   <div class="content">
     <h1>ZERO TWO</h1>
     <p>"If you don't belong here, just build a place where you do."</p>
-    
+
     <audio controls loop>
       <source src="Darling.mp3" type="audio/mpeg">
       Your browser needs audio support!
     </audio>
-    
+
     <br><br>
-    <button class="btn" onclick="window.location.href='activity2.html'">More Darling! 💖</button>
-  </div> </body>
+    <button class="btn" onclick="window.location.href='activity2.html'">
+      More Darling! 💖
+    </button>
+  </div>
+
+</body>
 </html>
