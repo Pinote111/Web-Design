@@ -83,7 +83,24 @@
       z-index: 2;
     }
 
-    /* HEADER (Activity 2 style) */
+    /* ================= TOP MARQUEE (UPDATED STYLE LIKE ACTIVITY 4) ================= */
+    .top-marquee {
+      position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 999;
+  font-size: 13px;
+
+  background: rgba(0,0,0,0.75);
+  padding: 8px 0;
+  border-bottom: 1px solid #ff69b4;
+  color: #ffb6e6;
+  font-weight: 600;
+  letter-spacing: 1px;
+  font-family: 'Poppins', sans-serif; 
+}
+    /* HEADER */
     h1 {
       color: #ffffff;
       font-family: 'Times New Roman', serif;
@@ -125,7 +142,6 @@
       box-shadow: 0 30px 70px rgba(255,105,180,0.6);
     }
 
-    /* TITLE */
     .effect-title {
       text-align: center;
       font-size: 20px;
@@ -135,7 +151,6 @@
       text-shadow: 2px 2px 6px rgba(0,0,0,0.8);
     }
 
-    /* DESCRIPTION */
     .demo-text {
       text-align: center;
       font-size: 13px;
@@ -145,17 +160,12 @@
       font-style: italic;
     }
 
-    /* CENTER BUTTON */
     .btn-center {
       display: flex;
       justify-content: center;
     }
 
-    /* =========================
-       EFFECTS (RESTORED)
-    ========================= */
-
-    /* HOVER PULSE */
+    /* EFFECTS (UNCHANGED) */
     .hover-pulse {
       background: linear-gradient(145deg, #ff1493, #ff69b4);
       color: white;
@@ -172,7 +182,6 @@
       box-shadow: 0 20px 50px rgba(255,105,180,0.8);
     }
 
-    /* SHINE */
     .hover-shine {
       background: linear-gradient(145deg, #ff4500, #ff1493);
       color: white;
@@ -200,7 +209,6 @@
       left: 100%;
     }
 
-    /* SHADOW LIFT */
     .shadow-lift {
       background: #9932cc;
       color: white;
@@ -217,7 +225,6 @@
       box-shadow: 0 20px 40px rgba(0,0,0,0.5);
     }
 
-    /* FLOAT */
     .shadow-float {
       background: white;
       color: #ff1493;
@@ -234,7 +241,6 @@
       box-shadow: 0 25px 50px rgba(0,0,0,0.4);
     }
 
-    /* MORPH */
     .transition-morph {
       background: #ba55d3;
       color: white;
@@ -252,7 +258,6 @@
       transform: scale(1.05);
     }
 
-    /* FLIP */
     .transition-flip {
       background: #ff1493;
       color: white;
@@ -267,13 +272,17 @@
     .transition-flip:hover {
       transform: rotateY(180deg);
     }
-
   </style>
 </head>
 
 <body>
 
-<h1>ACTIVITY #3: CSS HOVER, SHADOW AND TRANSITION</h1>
+<!-- ✅ TOP MARQUEE (UPDATED LIKE ACTIVITY 4 STYLE) -->
+<div class="top-marquee">
+  <marquee>ACTIVITY #3: CSS HOVER, SHADOW AND TRANSITION</marquee>
+</div>
+
+<h1>CSS Effects Showcase</h1>
 
 <div class="effects-container">
 
@@ -327,7 +336,7 @@
 
 </div>
 
-<!-- NAVIGATION (UNCHANGED — DO NOT REMOVE) -->
+<!-- NAVIGATION (UNCHANGED) -->
 <div class="navigator-container">
   <button class="arrow" onclick="navPrev()">‹</button>
 
