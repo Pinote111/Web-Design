@@ -5,10 +5,18 @@
   <title>DESIGN PORTFOLIO</title>
   <link rel="icon" type="image/gif" href="https://i.pinimg.com/originals/bc/11/80/bc11809c97271e15b7495b7ccd880ab7.gif">
   <style>
+    /* 1. GLOBAL SETTINGS */
+    :root {
+      --pink: #ff1493;
+      --hotpink: #ff69b4;
+      --darkpink: #8b0a50; /* Added your requested darkpink */
+    }
+
     * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Poppins', sans-serif; }
+    
     body {
       height: 100vh;
-      background: #000;
+      background: #050505;
       display: flex;
       justify-content: center;
       align-items: center;
@@ -16,35 +24,154 @@
       color: #fff;
       overflow: hidden;
     }
+
+    /* 2. BACKGROUND & OVERLAY */
     .bg {
       position: absolute;
       inset: 0;
       background: url('https://i.pinimg.com/originals/a9/89/ce/a989ced391db5317f5c1dba895f4f92f.gif') center/cover;
-      opacity: 0.2;
+      opacity: 0.15;
       z-index: -1;
+      filter: grayscale(30%);
     }
-    h1 { font-size: 5rem; letter-spacing: 10px; text-shadow: 0 0 20px #ff1493; }
+
+    /* 3. LANDING CONTENT */
+    .content { transition: transform 0.8s ease, filter 0.8s ease; }
+    .content.blur { filter: blur(10px); transform: scale(0.9); pointer-events: none; }
+
+    h1 { 
+      font-size: 5rem; 
+      letter-spacing: 15px; 
+      text-shadow: 0 0 20px var(--darkpink); 
+      margin: 10px 0;
+    }
+
     .start-btn {
       margin-top: 30px;
-      padding: 15px 40px;
-      border: 2px solid #ff1493;
-      background: rgba(255, 20, 147, 0.1);
+      padding: 15px 45px;
+      border: 2px solid var(--darkpink);
+      background: rgba(139, 10, 80, 0.1);
       color: #fff;
       text-decoration: none;
       border-radius: 50px;
       font-weight: bold;
-      transition: 0.3s;
-      display: inline-block;
+      letter-spacing: 2px;
+      transition: 0.4s;
+      cursor: pointer;
     }
-    .start-btn:hover { background: #ff1493; box-shadow: 0 0 30px #ff1493; }
+
+    .start-btn:hover { 
+      background: var(--darkpink); 
+      box-shadow: 0 0 40px var(--darkpink);
+      transform: translateY(-3px);
+    }
+
+    /* 4. LOGIN MODAL STYLING */
+    .login-overlay {
+      position: fixed;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.85);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      opacity: 0;
+      visibility: hidden;
+      transition: 0.5s;
+      z-index: 10;
+    }
+
+    .login-overlay.active { opacity: 1; visibility: visible; }
+
+    .login-card {
+      background: rgba(20, 20, 20, 0.9);
+      padding: 50px;
+      border-radius: 20px;
+      border: 1px solid var(--darkpink);
+      width: 100%;
+      max-width: 400px;
+      backdrop-filter: blur(20px);
+      box-shadow: 0 25px 50px rgba(0,0,0,0.5);
+    }
+
+    .login-card h2 { color: var(--hotpink); margin-bottom: 30px; letter-spacing: 3px; }
+
+    .input-group { margin-bottom: 20px; text-align: left; }
+    
+    input {
+      width: 100%;
+      padding: 12px 15px;
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 105, 180, 0.2);
+      border-radius: 8px;
+      color: #fff;
+      outline: none;
+      transition: 0.3s;
+    }
+
+    input:focus { border-color: var(--hotpink); background: rgba(255, 255, 255, 0.1); }
+
+    .forgot-pass {
+      display: block;
+      margin-top: 10px;
+      color: var(--darkpink); /* Changed to darkpink as requested */
+      font-size: 12px;
+      text-decoration: none;
+      text-align: right;
+      transition: 0.3s;
+    }
+    .forgot-pass:hover { color: var(--hotpink); text-shadow: 0 0 5px var(--hotpink); }
+
+    .login-submit {
+      width: 100%;
+      padding: 12px;
+      margin-top: 25px;
+      background: var(--darkpink);
+      border: none;
+      color: white;
+      border-radius: 8px;
+      font-weight: bold;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+    .login-submit:hover { background: var(--pink); box-shadow: 0 0 20px var(--pink); }
+
   </style>
 </head>
 <body>
+
   <div class="bg"></div>
-  <div class="content">
-    <p style="color: #ff69b4; letter-spacing: 3px;">WEB DESIGN FINALS</p>
+
+  <div class="content" id="main-content">
+    <p style="color: var(--hotpink); letter-spacing: 5px; font-weight: 300;">WEB DESIGN FINALS</p>
     <h1>JOURNEY</h1>
-    <a href="activity6.html" class="start-btn">ENTER PORTFOLIO</a>
+    <button class="start-btn" onclick="toggleLogin()">ENTER PORTFOLIO</button>
   </div>
+
+  <div class="login-overlay" id="login-modal">
+    <div class="login-card">
+      <h2>IDENTIFY</h2>
+      <form action="activity6.html">
+        <div class="input-group">
+          <input type="text" placeholder="Username" required>
+        </div>
+        <div class="input-group">
+          <input type="password" placeholder="Password" required>
+          <a href="#" class="forgot-pass">Forgot Password?</a>
+        </div>
+        <button type="submit" class="login-submit">LOGIN</button>
+      </form>
+      <p style="margin-top: 20px; font-size: 11px; opacity: 0.5; cursor: pointer;" onclick="toggleLogin()">Cancel</p>
+    </div>
+  </div>
+
+  <script>
+    function toggleLogin() {
+      const modal = document.getElementById('login-modal');
+      const content = document.getElementById('main-content');
+      modal.classList.toggle('active');
+      content.classList.toggle('blur');
+    }
+  </script>
+
 </body>
 </html>
