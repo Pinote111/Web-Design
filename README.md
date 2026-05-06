@@ -1,3 +1,5 @@
-note: index.html is the FINALS/COMPILATION
+note: 
+The "index.html" is the FINAL/COMPILATION. 
+THANK YOU.
 
 # Web-Design
